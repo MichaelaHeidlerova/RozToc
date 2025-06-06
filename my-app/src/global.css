@@ -1,15 +1,196 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
-
-* {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
 }
 
 html {
-  font-family: 'Open Sans', sans-serif;
+  font-family: sans-serif;
 }
 
-.container {
-  max-width: 26rem;
-  margin-right: auto;
-  margin-left: auto;
+.main-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  /* stejna vyska deti */
+  width: 100%;
+  max-width: 1280px;
+  height: 100%;
+  margin: 0 auto;
 }
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: start;
+  align-items: flex-start;
+  /* Zarovná obsah nahoře */
+  min-height: 100vh;
+  margin: 0;
+  background-color: white;
+  padding: 20px;
+  /* Přidáno padding pro menší obrazovky */
+  box-sizing: border-box;
+  /* Zahrnout padding do šířky */
+  flex-direction: column;
+  /* Vždy vedle sebe */
+}
+
+.header {
+  display: flex;
+  /* Použijeme flexbox pro uspořádání vnitřních divů */
+  flex-direction: row;
+  /* Vždy vedle sebe */
+  max-width: 1280px;
+  width: 100%;
+  justify-content: center;
+  /* Vycentrování obsahu uvnitř kontejneru */
+}
+
+.board,
+.teachersDesk {
+  flex: 1 1 100%;
+}
+
+.teachersDesk {
+  display: flex;
+  /* Použijeme flexbox pro uspořádání vnitřních divů */
+  flex-direction: row;
+  /* Vždy vedle sebe */
+  max-width: 1280px;
+  width: 100%;
+  margin: auto;
+  justify-content: left;
+  /* Vycentrování obsahu uvnitř kontejneru vlevo*/
+  padding-left: 10px;
+  border: 5px solid black;
+  background-color: #80562E;
+}
+
+.navigation {
+  display: flex;
+  /* Použijeme flexbox pro uspořádání vnitřních divů */
+  flex-direction: column;
+  /* Vždy vedle sebe */
+  width: 340px;
+  height: 400px;
+  align-items: center;
+  border: 5px solid black;
+  background-color: #80562E;
+  padding-top: 20px;
+}
+
+.aboutUs,
+.aboutOurProject,
+.empty {
+  display: flex;
+  /* Použijeme flexbox pro uspořádání vnitřních divů */
+  flex-direction: column;
+  /* Vždy vedle sebe */
+  max-width: 1280px;
+  width: 90%;
+  height: 100px;
+  justify-content: center;
+  /* Vycentrování obsahu uvnitř kontejneru */
+  align-items: center;
+  border: 5px solid;
+  border-color: black;
+  background-color: #AC723C;
+  margin: 10px;
+}
+
+.drawersBtn {
+  font-size: 35px;
+  font-family: "Rubik Moonrocks", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  text-decoration: none;
+  color: #ffffff;
+  background: transparent;
+  /*odstraní bílé pozadí */
+  border: none;
+  /* odstraní ohraničení buttonu */
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+
+h1 {
+  font-size: 100px;
+  font-family: "Rubik Moonrocks", sans-serif;
+  margin-bottom: 0;
+}
+
+h2 {
+  font-family: "ADLaM Display", sans-serif;
+  font-size: 30px;
+  color: white;
+  margin-left: 30px;
+}
+
+.board {
+  display: flex;
+  /* Použijeme flexbox pro uspořádání vnitřních divů */
+  flex-direction: column;
+  flex-grow: 1;
+  width: auto;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid black;
+  background-color: #E9BE96;
+  padding-top: 20px;
+}
+
+.mites,
+.schoolThings {
+  flex: 1;
+  min-width: 280px;
+  box-sizing: border-box;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.mites img,
+.schoolThings img {
+  max-width: 80%;
+  height: auto;
+}
+
+.title {
+  display: flex;
+  align-items: flex-end;
+  text-align: center;
+}
+
+.board p {
+  font-size: 18px;
+  color: #333;
+  padding: 0 20px;
+  text-align: justify;
+}
+
+.board h2 {
+  font-size: 36px;
+  color: #5D3A00;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .mites,
+  .schoolThings {
+    display: none;
+  }
+
+  .title {
+    display: block;
+    width: 100;
+    text-align: center;
+  }
+}
+
