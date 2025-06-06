@@ -9,6 +9,7 @@ KLÍČOVÉ FCE
 
 BONUSOVÉ FUNKCE
 - import seznamu např. z Excelu
+- animace
 
 ODKAZY:
 figma: https://www.figma.com/design/DSz2IbgIwDuup3hVqDe0R8/RozTo%C4%8D?node-id=92-795&t=8Tk5wCJIJ23RzPKE-1
