@@ -1,7 +1,20 @@
 import { createRoot } from 'react-dom/client';
 import { HomePage } from './pages/HomePage';
+import { BrowserRouter, Routes, Route } from "react-router";
 import './global.css';
+import { AboutUs } from './components/pages/AboutUs';
+import { Intro } from './components/pages/Intro';
+import { Instruction } from './components/pages/Instruction';
 
 createRoot(
   document.querySelector('#app'),
-).render(<HomePage />);
+).render(<BrowserRouter>
+<Routes>
+      <Route element={<HomePage />} >
+      <Route path="about-us" element={<AboutUs></AboutUs>}></Route>
+      <Route index element={<Intro></Intro>}></Route>
+      <Route path="instruction" element={<Instruction></Instruction>}></Route>
+      </Route>
+    </Routes>
+    
+  </BrowserRouter>);
