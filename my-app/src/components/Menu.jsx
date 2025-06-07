@@ -4,9 +4,11 @@ export const Menu = () => {
   return (
     <div className="navigation">
       <div className="classManagement">
+        <Link to="/list">
         <button className="drawersBtn" id="classManagementBtn">
           Správa tříd
         </button>
+        </Link>
       </div>
       <div className="groupFormation">
         <button className="drawersBtn" id="groupFormationBtn">

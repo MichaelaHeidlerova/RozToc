@@ -261,3 +261,10 @@ a {
 .intro p {
   margin: 0;
 }
+
+.list-detail th {
+text-align: left;
+}
+.list-detail table{
+  width: 100%;
+}
