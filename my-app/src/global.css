@@ -139,6 +139,14 @@ h2 {
   margin-left: 30px;
 }
 
+.pageTitle h2 {
+  font-family: "Lexend", sans-serif;
+  font-size: 30px;
+  color: black;
+  margin-left: 30px;
+  text-align: center;
+}
+
 .board {
   display: flex;
   /* Použijeme flexbox pro uspořádání vnitřních divů */
@@ -192,12 +200,6 @@ h2 {
   color: #333;
   padding: 0 20px;
   text-align: justify;
-}
-
-.board h2 {
-  font-size: 36px;
-  color: #5D3A00;
-  text-align: center;
 }
 
 @media (max-width: 768px) {
