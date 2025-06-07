@@ -8,6 +8,10 @@ html {
   font-family: "Lexend", sans-serif;
 }
 
+.container {
+  max-width: 1280px;
+}
+
 .layout-wrapper {
   display: flex;
   flex-direction: column;
@@ -32,8 +36,7 @@ html {
 
 body {
   display: flex;
-  justify-content: start;
-  align-items: flex-start;
+  align-items: center;
   min-height: 100vh;
   margin: 0;
   background-color: white;
@@ -45,7 +48,6 @@ body {
 .header {
   display: flex;
   flex-direction: row;
-  max-width: 1280px;
   width: 100%;
   justify-content: center;
 }
@@ -59,17 +61,26 @@ body {
   background-color: #80562E;
   box-sizing: border-box;
   width: 100%;
+  /*
+  position: sticky;
+  top: 108px;
+  */
 }
 
 .navigation {
   display: flex;
   flex-direction: column;
   min-width: 340px;
+  max-height: 500px;
   align-items: center;
   border: 5px solid black;
   border-top: none;
   background-color: #80562E;
   padding: 12px 0px;
+  /*
+  position: sticky;
+  top: 108px;
+  */
 }
 
 .classManagement,
@@ -81,13 +92,13 @@ body {
   flex-direction: column;
   max-width: 1280px;
   width: 90%;
-  height: 100px;
+  height: 150px;
   justify-content: center;
   align-items: center;
-  border: 5px solid;
+  border: 3px solid;
   border-color: black;
   background-color: #AC723C;
-  margin: 10px;
+  margin: 6px;
 }
 
 .drawersBtn {
