@@ -9,6 +9,8 @@ import { Vlastnosti } from './components/Vlastnosti/Vlastnosti';
 import { ListDetail } from './components/pages/list/ListDetail';
 import { seznam } from './seznam';
 import { Groups } from './pages/Groups/Groups';
+import { seznamTrid } from './seznamTrid';
+import { ClassList } from './components/pages/list/ClassList';
 
 createRoot(
   document.querySelector('#app'),
@@ -19,7 +21,8 @@ createRoot(
       <Route index element={<Intro></Intro>}></Route>
       <Route path="instruction" element={<Instruction></Instruction>}></Route>
       <Route path="groups" element={<Groups />}></Route>
-      <Route path="list" element={<ListDetail data={seznam}></ListDetail>}></Route>
+      <Route path="class-detail/:id" element={<ListDetail data={seznam}></ListDetail>}></Route>
+      <Route path="class-list" element={<ClassList data={seznamTrid}></ClassList>}></Route>
       </Route>
     </Routes>
     

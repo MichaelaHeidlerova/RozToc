@@ -5,6 +5,7 @@ export const seznam = [
     bystrost: 4,
     samostatnost: 3,
     socialni: 2,
+    trida: "1A",
   },
   {
     celeJmeno: 'Marie Nováková',
@@ -12,6 +13,7 @@ export const seznam = [
     bystrost: 5,
     samostatnost: 4,
     socialni: 5,
+    trida: "2A",
   },
   {
     celeJmeno: 'Petr Dvořák',
@@ -19,6 +21,7 @@ export const seznam = [
     bystrost: 3,
     samostatnost: 2,
     socialni: 3,
+    trida: "1A",
   },
   {
     celeJmeno: 'Anna Jelínková',
@@ -26,6 +29,7 @@ export const seznam = [
     bystrost: 4,
     samostatnost: 5,
     socialni: 4,
+    trida: "2A",
   },
   {
     celeJmeno: 'Tomáš Kučera',
@@ -33,6 +37,7 @@ export const seznam = [
     bystrost: 2,
     samostatnost: 3,
     socialni: 1,
+    trida: "1A",
   },
   {
     celeJmeno: 'Lucie Černá',
@@ -40,6 +45,7 @@ export const seznam = [
     bystrost: 5,
     samostatnost: 2,
     socialni: 5,
+    trida: "2A",
   },
   {
     celeJmeno: 'Martin Procházka',
@@ -47,6 +53,7 @@ export const seznam = [
     bystrost: 3,
     samostatnost: 4,
     socialni: 3,
+    trida: "1A",
   },
   {
     celeJmeno: 'Tereza Horáková',
@@ -54,6 +61,7 @@ export const seznam = [
     bystrost: 4,
     samostatnost: 5,
     socialni: 2,
+    trida: "2A",
   },
   {
     celeJmeno: 'Filip Marek',
@@ -61,6 +69,7 @@ export const seznam = [
     bystrost: 1,
     samostatnost: 1,
     socialni: 4,
+    trida: "1A",
   },
   {
     celeJmeno: 'Kateřina Růžičková',
@@ -68,6 +77,7 @@ export const seznam = [
     bystrost: 5,
     samostatnost: 3,
     socialni: 5,
+    trida: "2A",
   },
   {
     celeJmeno: 'Daniel Fiala',
@@ -75,6 +85,7 @@ export const seznam = [
     bystrost: 4,
     samostatnost: 2,
     socialni: 1,
+    trida: "1A",
   },
   {
     celeJmeno: 'Eliška Benešová',
@@ -82,6 +93,7 @@ export const seznam = [
     bystrost: 3,
     samostatnost: 4,
     socialni: 2,
+    trida: "2A",
   },
   {
     celeJmeno: 'Matěj Konečný',
@@ -89,6 +101,7 @@ export const seznam = [
     bystrost: 2,
     samostatnost: 5,
     socialni: 3,
+    trida: "1A",
   },
   {
     celeJmeno: 'Veronika Pospíšilová',
@@ -96,6 +109,7 @@ export const seznam = [
     bystrost: 5,
     samostatnost: 4,
     socialni: 1,
+    trida: "2A",
   },
   {
     celeJmeno: 'Jakub Sedláček',
@@ -103,6 +117,7 @@ export const seznam = [
     bystrost: 3,
     samostatnost: 1,
     socialni: 5,
+    trida: "1A",
   },
   {
     celeJmeno: 'Michaela Šimková',
@@ -110,6 +125,7 @@ export const seznam = [
     bystrost: 4,
     samostatnost: 3,
     socialni: 4,
+    trida: "2A",
   },
   {
     celeJmeno: 'Lukáš Kadlec',
@@ -117,6 +133,7 @@ export const seznam = [
     bystrost: 5,
     samostatnost: 5,
     socialni: 2,
+    trida: "1A",
   },
   {
     celeJmeno: 'Kristýna Kratochvílová',
@@ -124,6 +141,7 @@ export const seznam = [
     bystrost: 2,
     samostatnost: 2,
     socialni: 3,
+    trida: "2A",
   },
   {
     celeJmeno: 'Adam Rybář',
@@ -131,6 +149,7 @@ export const seznam = [
     bystrost: 4,
     samostatnost: 1,
     socialni: 2,
+    trida: "1A",
   },
   {
     celeJmeno: 'Nikola Veselá',
@@ -138,6 +157,7 @@ export const seznam = [
     bystrost: 3,
     samostatnost: 3,
     socialni: 5,
+    trida: "2A",
   },
   {
     celeJmeno: 'Vojtěch Král',
@@ -145,6 +165,7 @@ export const seznam = [
     bystrost: 5,
     samostatnost: 4,
     socialni: 4,
+    trida: "1A",
   },
   {
     celeJmeno: 'Barbora Doležalová',
@@ -152,6 +173,7 @@ export const seznam = [
     bystrost: 1,
     samostatnost: 2,
     socialni: 1,
+    trida: "2A",
   },
   {
     celeJmeno: 'Ondřej Kolář',
@@ -159,6 +181,7 @@ export const seznam = [
     bystrost: 4,
     samostatnost: 3,
     socialni: 3,
+    trida: "1A",
   },
   {
     celeJmeno: 'Karolína Zemanová',
@@ -166,5 +189,6 @@ export const seznam = [
     bystrost: 3,
     samostatnost: 5,
     socialni: 2,
+    trida: "2A",
   },
 ];

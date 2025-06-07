@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 export const ListDetail = ({ data }) => {
+  const params = useParams();
   const [list, setList] = useState(data);
 
   // Formulářové stavy (každý input má svůj)
@@ -32,6 +34,7 @@ export const ListDetail = ({ data }) => {
       bystrost: Number(bystrost),
       samostatnost: Number(samostatnost),
       socialni: Number(socialni),
+      trida: params.id
     };
 
     setList([...list, newEntry]);
@@ -57,19 +60,23 @@ export const ListDetail = ({ data }) => {
           </tr>
         </thead>
         <tbody>
-          {list?.map((row) => {
-            const vysledek = row.pohlavi === 0 ? 'Muž' : 'Žena';
+          {list
+            ?.filter((row) => {
+              return row.trida === params.id;
+            })
+            .map((row) => {
+              const vysledek = row.pohlavi === 0 ? 'Muž' : 'Žena';
 
-            return (
-              <tr key={row.celeJmeno}>
-                <td>{row.celeJmeno}</td>
-                <td>{vysledek}</td>
-                <td>{row.bystrost}</td>
-                <td>{row.samostatnost}</td>
-                <td>{row.socialni}</td>
-              </tr>
-            );
-          })}
+              return (
+                <tr key={row.celeJmeno}>
+                  <td>{row.celeJmeno}</td>
+                  <td>{vysledek}</td>
+                  <td>{row.bystrost}</td>
+                  <td>{row.samostatnost}</td>
+                  <td>{row.socialni}</td>
+                </tr>
+              );
+            })}
           <tr>
             <td>
               <input

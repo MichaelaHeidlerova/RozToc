@@ -4,7 +4,7 @@ export const Menu = () => {
   return (
     <div className="navigation">
       <div className="classManagement">
-        <Link to="/list">
+        <Link to="/class-list">
         <button className="drawersBtn" id="classManagementBtn">
           Správa tříd
         </button>
