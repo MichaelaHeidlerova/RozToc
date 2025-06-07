@@ -47,9 +47,15 @@ export const ListDetail = ({ data }) => {
     setSocialni('');
   };
   const save = () => {
-    localStorage.setItem("seznamZaku",JSON.stringify(list))
+    localStorage.setItem('seznamZaku', JSON.stringify(list));
   };
-
+  const remove = (plneJmeno) => {
+    setList(
+      list.filter((row) => {
+        return row.celeJmeno !== plneJmeno;
+      }),
+    );
+  };
   return (
     <div className="list-detail">
       <div className="pageTitle">
@@ -64,6 +70,7 @@ export const ListDetail = ({ data }) => {
             <th>Bystrost</th>
             <th>Samostatnost</th>
             <th>Sociálnost</th>
+            <th>Akce</th>
           </tr>
         </thead>
         <tbody>
@@ -81,6 +88,11 @@ export const ListDetail = ({ data }) => {
                   <td>{row.bystrost}</td>
                   <td>{row.samostatnost}</td>
                   <td>{row.socialni}</td>
+                  <td>
+                    <button onClick={() => remove(row.celeJmeno)}>
+                      Odebrat
+                    </button>
+                  </td>
                 </tr>
               );
             })}
