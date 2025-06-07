@@ -16,7 +16,6 @@ html {
   width: 100%;
   min-width: fit-content;
   margin: 0 auto;
-  /* Centrování horizontálně */
   gap: 0;
 }
 
@@ -25,7 +24,6 @@ html {
   flex-direction: row;
   justify-content: flex-start;
   align-items: stretch;
-  /* stejna vyska deti */
   width: 100%;
   height: 100%;
   margin: 0;
@@ -37,37 +35,27 @@ body {
   display: flex;
   justify-content: start;
   align-items: flex-start;
-  /* Zarovná obsah nahoře */
   min-height: 100vh;
   margin: 0;
   background-color: white;
   padding: 20px;
-  /* Přidáno padding pro menší obrazovky */
   box-sizing: border-box;
-  /* Zahrnout padding do šířky */
   flex-direction: column;
-  /* Vždy vedle sebe */
 }
 
 .header {
   display: flex;
-  /* Použijeme flexbox pro uspořádání vnitřních divů */
   flex-direction: row;
-  /* Vždy vedle sebe */
   max-width: 1280px;
   width: 100%;
   justify-content: center;
-  /* Vycentrování obsahu uvnitř kontejneru */
 }
 
 .teachersDesk {
   display: flex;
-  /* Použijeme flexbox pro uspořádání vnitřních divů */
   flex-direction: row;
-  /* Vždy vedle sebe */
   justify-content: flex-start;
-  /* Vycentrování obsahu uvnitř kontejneru vlevo*/
-  padding-left: 10px;
+  padding-left: 30px;
   border: 5px solid black;
   background-color: #80562E;
   box-sizing: border-box;
@@ -76,15 +64,13 @@ body {
 
 .navigation {
   display: flex;
-  /* Použijeme flexbox pro uspořádání vnitřních divů */
   flex-direction: column;
-  /* Vždy vedle sebe */
-  width: 340px;
-
+  min-width: 340px;
   align-items: center;
   border: 5px solid black;
+  border-top: none;
   background-color: #80562E;
-  padding-top: 20px;
+  padding: 12px 0px;
 }
 
 .classManagement,
@@ -93,14 +79,11 @@ body {
 .timer,
 .aboutUs {
   display: flex;
-  /* Použijeme flexbox pro uspořádání vnitřních divů */
   flex-direction: column;
-  /* Vždy vedle sebe */
   max-width: 1280px;
   width: 90%;
   height: 100px;
   justify-content: center;
-  /* Vycentrování obsahu uvnitř kontejneru */
   align-items: center;
   border: 5px solid;
   border-color: black;
@@ -110,17 +93,16 @@ body {
 
 .drawersBtn {
   font-size: 30px;
+  font-weight: bolder;
   font-family: "Lexend", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 10px;
   text-decoration: none;
-  color: #ffffff;
+  color: black;
   background: transparent;
-  /*odstraní bílé pozadí */
   border: none;
-  /* odstraní ohraničení buttonu */
   cursor: pointer;
   width: 100%;
   height: 100%;
@@ -135,7 +117,7 @@ h1 {
 h2 {
   font-family: "Lexend", sans-serif;
   font-size: 30px;
-  color: white;
+  color: black;
   margin-left: 30px;
 }
 
@@ -148,15 +130,11 @@ h2 {
 }
 
 .board {
-  /* display: flex; */
-  /* Použijeme flexbox pro uspořádání vnitřních divů */
   flex-direction: column;
   flex-grow: 1;
   width: auto;
   justify-content: center;
   align-items: center;
-  border: 5px solid black;
-  background-color: #E9BE96;
   padding: 20px;
 }
 
@@ -196,7 +174,6 @@ h2 {
 
 .board p {
   font-size: 20px;
-
   text-align: justify;
 }
 
@@ -220,7 +197,6 @@ h2 {
   }
 }
 
-/* kulate fotky */
 .board .about-us .icon-button {
   width: 80px;
   height: 80px;
@@ -231,7 +207,6 @@ h2 {
   margin: 0 10px;
 }
 
-/* obal obou ikon */
 .board .about-us .icons-wrapper {
   display: flex;
   justify-content: center;
@@ -244,7 +219,8 @@ h2 {
   align-items: center;
   gap: 20px;
   font-size: 30px;
-    color: white;
+  color: white;
+
 }
 
 a {
@@ -254,10 +230,10 @@ a {
 
 .intro {
   display: flex;
-    
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
 
 .intro p {
@@ -265,9 +241,10 @@ a {
 }
 
 .list-detail th {
-text-align: left;
+  text-align: left;
 }
-.list-detail table{
+
+.list-detail table {
   width: 100%;
 }
 
