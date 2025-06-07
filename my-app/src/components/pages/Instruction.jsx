@@ -2,13 +2,15 @@ export const Instruction = () => {
   return (
     <section class="guide">
       <div className="pageTitle">
-          <h2>NÁVOD PRO UČITELE: Tvorba a správa skupin ve třídě</h2>
+          <h2>NÁVOD PRO UČITELE: Jak spravovat třídy a tvořit skupiny?</h2>
         </div>
+
+<div class="pageContent">
   <p class="guide-paragraph">
     Vítejte v nástroji pro efektivní správu žáků a tvorbu skupin! Následující kroky vás provedou klíčovými funkcemi.
   </p>
-
-  <div class="guide-section">
+    
+  <div class="guide-Content">
     <h3 class="guide-subheading">1. Založení třídy a přidání žáků</h3>
     <p class="guide-paragraph"><strong>Založení třídy:</strong> Po přihlášení klikněte na tlačítko "Nová třída". Zadejte název třídy (např. 7.A) a uložte.</p>
     <p class="guide-paragraph"><strong>Přidání žáků:</strong> V přehledu tříd vyberte nově vytvořenou třídu a klikněte na "Přidat žáka". Zadejte jméno žáka a volitelně doplňte jeho vlastnosti:</p>
@@ -64,6 +66,8 @@ export const Instruction = () => {
   <p class="guide-conclusion">
     Věříme, že vám tento nástroj usnadní práci se žáky a organizaci skupinových aktivit! Pokud budete mít jakékoli dotazy, neváhejte se na nás obrátit.
   </p>
+
+</div>
 </section>
   );
 };
