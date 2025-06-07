@@ -8,6 +8,7 @@ import { Instruction } from './components/pages/Instruction';
 import { Vlastnosti } from './components/Vlastnosti/Vlastnosti';
 import { ListDetail } from './components/pages/list/ListDetail';
 import { seznam } from './seznam';
+import { Groups } from './pages/Groups/Groups';
 
 createRoot(
   document.querySelector('#app'),
@@ -17,7 +18,7 @@ createRoot(
       <Route path="about-us" element={<AboutUs></AboutUs>}></Route>
       <Route index element={<Intro></Intro>}></Route>
       <Route path="instruction" element={<Instruction></Instruction>}></Route>
-      <Route path="groups" element={<Vlastnosti></Vlastnosti>}></Route>
+      <Route path="groups" element={<Groups />}></Route>
       <Route path="list" element={<ListDetail data={seznam}></ListDetail>}></Route>
       </Route>
     </Routes>
