@@ -270,3 +270,9 @@ text-align: left;
 .list-detail table{
   width: 100%;
 }
+
+.input-error {
+  border: 2px solid red;
+  outline: none;
+  background-color: #ffe5e5;
+}
