@@ -1,6 +1,6 @@
 export const Intro = () => {
   return (
-    <div >
+    <div className="intro">
       <p>Nenechá je sedět v klidu!</p>
       <p>Propojí je se známými i neznámými!</p>
       <p>Vytvoří skvělé týmy!</p>
