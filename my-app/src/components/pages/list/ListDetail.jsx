@@ -1,4 +1,7 @@
+import { useState } from "react";
+
 export const ListDetail = ({ data }) => {
+  const [list, setList] = useState(data);
   return (
     <div className="list-detail">
       <table class="students-table">
@@ -12,12 +15,12 @@ export const ListDetail = ({ data }) => {
           </tr>
         </thead>
         <tbody>
-          {data?.map((row) => {
+          {list?.map((row) => {
             const vysledek = row.pohlavi === 0 ? 'Muž' : 'Žena';
-            const celeJmeno = `${row.prijmeni} ${row.jmeno}`;
+            
             return (
-              <tr key={celeJmeno}>
-                <td>{celeJmeno}</td>
+              <tr key={row.celeJmeno}>
+                <td>{row.celeJmeno}</td>
                 <td>{vysledek}</td>
                 <td>{row.bystrost}</td>
                 <td>{row.samostatnost}</td>
@@ -25,6 +28,27 @@ export const ListDetail = ({ data }) => {
               </tr>
             );
           })}
+          <tr>
+            <td>
+              <input></input>
+            </td>
+            <td>
+              <select>
+                <option value="0">Muž</option>
+                <option value="1">Žena</option>
+              </select>
+            </td>
+            <td>
+              <input></input>
+            </td>
+            <td>
+              <input></input>
+            </td>
+            <td>
+              <input></input>
+            </td>
+            <button>Přidat</button>
+          </tr>
         </tbody>
       </table>
     </div>
