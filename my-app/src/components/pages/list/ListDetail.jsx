@@ -2,9 +2,51 @@ import { useState } from "react";
 
 export const ListDetail = ({ data }) => {
   const [list, setList] = useState(data);
+
+  // Formulářové stavy (každý input má svůj)
+  const [celeJmeno, setCeleJmeno] = useState('');
+  const [pohlavi, setPohlavi] = useState('0');
+  const [bystrost, setBystrost] = useState('');
+  const [samostatnost, setSamostatnost] = useState('');
+  const [socialni, setSocialni] = useState('');
+
+  // Pomocná funkce: kontroluje, že hodnoty jsou v rozmezí 1–5
+  const isValidValue = (val) => {
+    const num = Number(val);
+    return Number.isInteger(num) && num >= 1 && num <= 5;
+  };
+
+  // Celková validace formuláře
+  const isFormValid =
+    celeJmeno.trim() !== '' &&
+    isValidValue(bystrost) &&
+    isValidValue(samostatnost) &&
+    isValidValue(socialni);
+
+  const handleAdd = () => {
+    if (!isFormValid) return; // Ochrana proti ručnímu spuštění
+
+    const newEntry = {
+      celeJmeno,
+      pohlavi: Number(pohlavi),
+      bystrost: Number(bystrost),
+      samostatnost: Number(samostatnost),
+      socialni: Number(socialni),
+    };
+
+    setList([...list, newEntry]);
+
+    // Vyčištění formuláře
+    setCeleJmeno('');
+    setPohlavi('0');
+    setBystrost('');
+    setSamostatnost('');
+    setSocialni('');
+  };
+
   return (
     <div className="list-detail">
-      <table class="students-table">
+      <table className="students-table">
         <thead>
           <tr>
             <th>Příjmení a jméno</th>
@@ -17,7 +59,7 @@ export const ListDetail = ({ data }) => {
         <tbody>
           {list?.map((row) => {
             const vysledek = row.pohlavi === 0 ? 'Muž' : 'Žena';
-            
+
             return (
               <tr key={row.celeJmeno}>
                 <td>{row.celeJmeno}</td>
@@ -30,24 +72,56 @@ export const ListDetail = ({ data }) => {
           })}
           <tr>
             <td>
-              <input></input>
+              <input
+                value={celeJmeno}
+                onChange={(e) => setCeleJmeno(e.target.value)}
+                placeholder="Celé jméno"
+              />
             </td>
             <td>
-              <select>
+              <select
+                value={pohlavi}
+                onChange={(e) => setPohlavi(e.target.value)}
+              >
                 <option value="0">Muž</option>
                 <option value="1">Žena</option>
               </select>
             </td>
             <td>
-              <input></input>
+              <input
+                type="number"
+                min="1"
+                max="5"
+                value={bystrost}
+                onChange={(e) => setBystrost(e.target.value)}
+                className={!isValidValue(bystrost) ? 'input-error' : ''}
+              />
             </td>
             <td>
-              <input></input>
+              <input
+                type="number"
+                min="1"
+                max="5"
+                value={samostatnost}
+                onChange={(e) => setSamostatnost(e.target.value)}
+                className={!isValidValue(samostatnost) ? 'input-error' : ''}
+              />
             </td>
             <td>
-              <input></input>
+              <input
+                type="number"
+                min="1"
+                max="5"
+                value={socialni}
+                onChange={(e) => setSocialni(e.target.value)}
+                className={!isValidValue(socialni) ? 'input-error' : ''}
+              />
             </td>
-            <button>Přidat</button>
+            <td>
+              <button onClick={handleAdd} disabled={!isFormValid}>
+                Přidat
+              </button>
+            </td>
           </tr>
         </tbody>
       </table>
