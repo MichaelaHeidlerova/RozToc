@@ -1,6 +1,13 @@
 import './vlastnosti.css';
+import React, { useState } from 'react';
 
 export const Vlastnosti = ({ }) => {
+  const [typSkupin, setTypSkupin] = useState();
+
+
+
+
+
   return (
     <div>
       <div className='pageTitle'>
@@ -23,12 +30,26 @@ export const Vlastnosti = ({ }) => {
       </div>
       <div className="selectFormation">
         <div className="numberOfStudents">
-          <button>Vytvořit daný počet skupin</button>
+          <button onClick={() => setTypSkupin("pocetSkupin")}>Vytvořit daný počet skupin</button>
         </div>
         <div className="numberOfStudents">
-          <button>Vytvořit skupiny po x žácích</button>
+          <button onClick={() => setTypSkupin("pocetZaku")}>Vytvořit skupiny po x žácích</button>
         </div>
     </div>
+        <div>
+          {typSkupin === "pocetSkupin" && (
+            <div className="numberOfGroups">
+              <label htmlFor="numberOfGroups">Zadejte počet skupin:</label>
+              <input type="number" id="numberOfGroups" name="numberOfGroups" min="1" max="10" />
+            </div>
+          )}
+          {typSkupin === "pocetZaku" && (
+            <div className="numberOfStudents">
+              <label htmlFor="numberOfStudents">Zadejte počet žáků ve skupině:</label>
+              <input type="number" id="numberOfStudents" name="numberOfStudents" min="1" max="30" />
+            </div>
+          )}
+        </div>
     </div>
   );
 };
