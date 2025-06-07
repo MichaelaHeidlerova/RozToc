@@ -1,0 +1,12 @@
+.selectFormation {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.selectFormation button {
+  font-size: 30px;
+  font-family: "Lexend", sans-serif;
+  padding: 10px;
+  color: black;
+}

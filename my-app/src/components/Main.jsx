@@ -1,3 +1,5 @@
+import { Form } from './Form/Form';
+import { Vlastnosti } from './Vlastnosti/Vlastnosti';
 import { Menu } from './Menu';
 import { Content } from './Content';
 
@@ -20,9 +22,17 @@ export const Main = () => {
       </div>
 
       <div className="main-container">
-        <Menu />
-        <Content />
+        <Menu></Menu>
+
+
+        <Content>
+        <div className="board">
+          <Vlastnosti />
+          </div>
+  
+        </Content>
       </div>
-    </div>
+      </div>
+
   );
 };
