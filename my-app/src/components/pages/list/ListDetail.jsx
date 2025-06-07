@@ -34,7 +34,7 @@ export const ListDetail = ({ data }) => {
       bystrost: Number(bystrost),
       samostatnost: Number(samostatnost),
       socialni: Number(socialni),
-      trida: params.id
+      trida: params.id,
     };
 
     setList([...list, newEntry]);
@@ -46,11 +46,15 @@ export const ListDetail = ({ data }) => {
     setSamostatnost('');
     setSocialni('');
   };
+  const save = () => {
+    localStorage.setItem("seznamZaku",JSON.stringify(list))
+  };
 
   return (
     <div className="list-detail">
       <div className="pageTitle">
-          <h2>{params.id}</h2>
+        <h2>{params.id}</h2>
+        <button onClick={save}>Uložit</button>
       </div>
       <table className="students-table">
         <thead>
