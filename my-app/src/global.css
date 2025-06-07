@@ -5,7 +5,7 @@
 }
 
 html {
-  font-family: sans-serif;
+  font-family: "Lexend", sans-serif;
 }
 
 .layout-wrapper {
@@ -33,7 +33,7 @@ html {
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Lexend", sans-serif;
   display: flex;
   justify-content: start;
   align-items: flex-start;
@@ -87,9 +87,11 @@ body {
   padding-top: 20px;
 }
 
-.aboutUs,
-.aboutOurProject,
-.empty {
+.classManagement,
+.groupFormation,
+.instructions,
+.timer,
+.aboutUs {
   display: flex;
   /* Použijeme flexbox pro uspořádání vnitřních divů */
   flex-direction: column;
@@ -107,8 +109,8 @@ body {
 }
 
 .drawersBtn {
-  font-size: 35px;
-  font-family: "Rubik Moonrocks", sans-serif;
+  font-size: 30px;
+  font-family: "Lexend", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -131,7 +133,7 @@ h1 {
 }
 
 h2 {
-  font-family: "ADLaM Display", sans-serif;
+  font-family: "Lexend", sans-serif;
   font-size: 30px;
   color: white;
   margin-left: 30px;
@@ -168,6 +170,16 @@ h2 {
   height: auto;
 }
 
+.mite {
+  max-width: 150px;
+  height: auto;
+}
+
+.mite img{
+  max-width: 150px;
+  height: auto;
+}
+
 .title {
   display: flex;
   align-items: flex-end;
@@ -175,7 +187,8 @@ h2 {
 }
 
 .board p {
-  font-size: 18px;
+  font-size: 30px;
+  line-height: 0;
   color: #333;
   padding: 0 20px;
   text-align: justify;
