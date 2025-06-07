@@ -1,3 +1,6 @@
+import { Menu } from './Menu';
+import { Content } from './Content';
+
 export const Main = () => {
   return (
     <div className="layout-wrapper">
@@ -9,43 +12,9 @@ export const Main = () => {
       </div>
 
       <div className="main-container">
-        <div className="navigation">
-          <div className="classManagement">
-            <button className="drawersBtn" id="classManagementBtn">
-              Správa tříd
-            </button>
-          </div>
-          <div className="groupFormation">
-            <button className="drawersBtn" id="groupFormationBtn">
-              Tvorba skupin
-            </button>
-          </div>
-          <div className="instructions">
-            <button className="drawersBtn" id="instructionsBtn">
-              Návod
-            </button>
-          </div>
-          <div className="timer">
-            <button className="drawersBtn" id="timerBtn">
-              Časomíra
-            </button>
-          </div>
-          <div className="aboutUs">
-            <button className="drawersBtn" id="aboutUsButton">
-              O nás
-            </button>
-          </div>
-        </div>
+        <Menu></Menu>
 
-        <div className="board">
-          <p>Nenechá je sedět v klidu!</p>
-          <p>Propojí je se známými i neznámými!</p>
-          <p>Vytvoří skvělé týmy!</p>
-          <p>To je náš projekt, co Vaše žáky doslova RozTočí!</p>
-          <div className="mite">
-            <img src="./pages/HomePage/img/mite.jpg" alt="Mite" />
-          </div>
-        </div>
+        <Content></Content>
       </div>
     </div>
   );

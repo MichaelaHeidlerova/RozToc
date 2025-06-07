@@ -80,7 +80,7 @@ body {
   flex-direction: column;
   /* Vždy vedle sebe */
   width: 340px;
-  height: 400px;
+  
   align-items: center;
   border: 5px solid black;
   background-color: #80562E;
@@ -140,7 +140,7 @@ h2 {
 }
 
 .board {
-  display: flex;
+  /* display: flex; */
   /* Použijeme flexbox pro uspořádání vnitřních divů */
   flex-direction: column;
   flex-grow: 1;
@@ -175,7 +175,7 @@ h2 {
   height: auto;
 }
 
-.mite img{
+.mite img {
   max-width: 150px;
   height: auto;
 }
@@ -188,7 +188,6 @@ h2 {
 
 .board p {
   font-size: 30px;
-  line-height: 0;
   color: #333;
   padding: 0 20px;
   text-align: justify;
@@ -212,4 +211,23 @@ h2 {
     width: 100%;
     text-align: center;
   }
+}
+
+/* kulate fotky */
+.board .about-us .icon-button {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+/* obal obou ikon */
+.board .about-us .icons-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
 }
