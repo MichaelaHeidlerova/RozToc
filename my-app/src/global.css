@@ -31,7 +31,6 @@ html {
 }
 
 body {
-  font-family: "Lexend", sans-serif;
   display: flex;
   justify-content: start;
   align-items: flex-start;
@@ -94,7 +93,6 @@ body {
 .drawersBtn {
   font-size: 30px;
   font-weight: bolder;
-  font-family: "Lexend", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -115,18 +113,18 @@ h1 {
 }
 
 h2 {
-  font-family: "Lexend", sans-serif;
   font-size: 30px;
   color: black;
-  margin-left: 30px;
 }
 
-.pageTitle h2 {
-  font-family: "Lexend", sans-serif;
-  font-size: 30px;
-  color: black;
-  margin-left: 30px;
+.pageTitle {
+  border: 2px solid black;
   text-align: center;
+  background-color: #E9BE96;
+}
+
+.pageContent {
+  padding: 25px;
 }
 
 .board {
@@ -135,7 +133,7 @@ h2 {
   width: auto;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 5px;
 }
 
 .mites,

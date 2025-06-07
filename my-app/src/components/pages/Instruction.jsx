@@ -1,7 +1,9 @@
 export const Instruction = () => {
   return (
     <section class="guide">
-  <h2 class="guide-heading">Návod pro učitele: Tvorba a správa skupin ve třídě</h2>
+      <div className="pageTitle">
+          <h2>NÁVOD PRO UČITELE: Tvorba a správa skupin ve třídě</h2>
+        </div>
   <p class="guide-paragraph">
     Vítejte v nástroji pro efektivní správu žáků a tvorbu skupin! Následující kroky vás provedou klíčovými funkcemi.
   </p>

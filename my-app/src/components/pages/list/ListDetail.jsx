@@ -49,6 +49,9 @@ export const ListDetail = ({ data }) => {
 
   return (
     <div className="list-detail">
+      <div className="pageTitle">
+          <h2>{params.id}</h2>
+      </div>
       <table className="students-table">
         <thead>
           <tr>

@@ -56,11 +56,9 @@ export const Vlastnosti = ({}) => {
 
   return (
     <div>
-      <div className="pageHeader">
         <div className="pageTitle">
           <h2>ZOHLEDNĚNÍ VLASTNOSTÍ</h2>
         </div>
-      </div>
 
       <div className="pageContent">
         <div className="howManyGroups">

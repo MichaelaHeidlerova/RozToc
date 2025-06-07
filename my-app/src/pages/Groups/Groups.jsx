@@ -8,7 +8,9 @@ export const Groups = () => {
   if (step === "vytvoreniSkupin") {
     return (
       <div>
-        <h2>Vytvoření skupin</h2>
+        <div className="pageTitle">
+          <h2>Vytvoření skupin</h2>
+        </div>
         <p>Zde bude správa vytváření skupin.</p>
         <button onClick={() => setStep("nepritomnost")}>Pokračovat na nepřítomnost</button>
       </div>

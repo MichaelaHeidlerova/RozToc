@@ -8,21 +8,14 @@
   flex-direction: row;
   align-items: center;
   padding: 20px;
-  border: 2px dashed black;
-  background-color: white;
+  border: 3px dashed black;
+  background-color: #E9BE96;
   margin: 10px;
   justify-content: center;
   align-items: center;
-  width: 100px;
-  height: 100px;
-  font-size: 24px;
-}
-
-.h1 {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  font-size: 24px;
+  width: 150px;
+  height: 150px;
+  font-size: 40px;
 }
 
 .h1 {

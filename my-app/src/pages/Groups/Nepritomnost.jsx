@@ -21,7 +21,9 @@ export const Nepritomnost = ({ setStep }) => {
 
   return (
     <div>
-      <h2>Nepřítomnost</h2>
+      <div className="pageTitle">
+          <h2>Nepřítomnost</h2>
+      </div>
       <p>Zde bude správa nepřítomností studentů.</p>
       <ul>
         {zaci.map((zak) => (
