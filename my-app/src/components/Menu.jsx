@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export const Menu = () => {
   return (
     <div className="navigation">
@@ -12,9 +14,11 @@ export const Menu = () => {
         </button>
       </div>
       <div className="instructions">
+        <Link to="/instruction">
         <button className="drawersBtn" id="instructionsBtn">
           Návod
         </button>
+        </Link>
       </div>
       <div className="timer">
         <button className="drawersBtn" id="timerBtn">
@@ -22,9 +26,11 @@ export const Menu = () => {
         </button>
       </div>
       <div className="aboutUs">
+        <Link to="/about-us">
         <button className="drawersBtn" id="aboutUsButton">
           O nás
         </button>
+        </Link>
       </div>
     </div>
   );

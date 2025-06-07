@@ -237,12 +237,15 @@ h2 {
   margin-top: 20px;
 }
 
-.guide {}
-
 .date-display {
   display: flex;
   align-items: center;
   gap: 20px;
   font-size: 30px;
     color: white;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
