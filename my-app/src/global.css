@@ -188,7 +188,7 @@ h2 {
 
 .board p {
   font-size: 20px;
-  
+
   text-align: justify;
 }
 
@@ -200,8 +200,8 @@ h2 {
 
 .board h3 {
   font-size: 28px;
-  
-  
+
+
 }
 
 @media (max-width: 768px) {
@@ -237,6 +237,12 @@ h2 {
   margin-top: 20px;
 }
 
-.guide {
-  
+.guide {}
+
+.date-display {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 30px;
+    color: white;
 }
