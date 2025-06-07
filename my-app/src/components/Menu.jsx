@@ -9,9 +9,11 @@ export const Menu = () => {
         </button>
       </div>
       <div className="groupFormation">
+        <Link to="/groups">
         <button className="drawersBtn" id="groupFormationBtn">
           Tvorba skupin
         </button>
+        </Link>
       </div>
       <div className="instructions">
         <Link to="/instruction">

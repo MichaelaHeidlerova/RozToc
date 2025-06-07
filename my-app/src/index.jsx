@@ -5,6 +5,7 @@ import './global.css';
 import { AboutUs } from './components/pages/AboutUs';
 import { Intro } from './components/pages/Intro';
 import { Instruction } from './components/pages/Instruction';
+import { Vlastnosti } from './components/Vlastnosti/Vlastnosti';
 
 createRoot(
   document.querySelector('#app'),
@@ -14,6 +15,7 @@ createRoot(
       <Route path="about-us" element={<AboutUs></AboutUs>}></Route>
       <Route index element={<Intro></Intro>}></Route>
       <Route path="instruction" element={<Instruction></Instruction>}></Route>
+      <Route path="groups" element={<Vlastnosti></Vlastnosti>}></Route>
       </Route>
     </Routes>
     
