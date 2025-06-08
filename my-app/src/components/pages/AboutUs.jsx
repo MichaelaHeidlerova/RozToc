@@ -11,19 +11,19 @@ export const AboutUs = () => {
       Jsme Gábina a Míša a společně tvoříme super tým!
       Mrkni na naše GitHuby:
       </p>
-      <div class="icons-wrapper">
+      <div className="icons-wrapper">
         <a href="https://github.com/GabinaUrbanova?tab=packages">
           <img
             src={foto_G}
             alt="Ikona_Gábina"
-            class="icon-button"
+            className="icon-button"
           />
         </a>
         <a href="https://github.com/MichaelaHeidlerova">
           <img
             src={foto_M}
             alt="Ikona_Míša"
-            class="icon-button"
+            className="icon-button"
           />
         </a>
       </div>

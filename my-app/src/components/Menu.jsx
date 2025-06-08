@@ -25,9 +25,11 @@ export const Menu = () => {
         </Link>
       </div>
       <div className="timer">
+        <Link to="/timer">
         <button className="drawersBtn" id="timerBtn">
           Časomíra
         </button>
+        </Link>
       </div>
       <div className="aboutUs">
         <Link to="/about-us">

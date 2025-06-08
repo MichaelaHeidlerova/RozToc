@@ -1,5 +1,17 @@
-export const rozdelDoSkupin = (students, vlastnosti, typRozdeleni, hodnota) => {
-  const pocetZaku = students.length;
+  // Funkce pro zamíchání pole (Fisher-Yates shuffle)
+  const zamichatPole = (pole) => {
+    for (let i = pole.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [pole[i], pole[j]] = [pole[j], pole[i]];
+    }
+    return pole;
+  };
+
+export const rozdelDoSkupin = (nezamichaniStudents, vlastnosti, typRozdeleni, hodnota) => {
+  const pocetZaku = nezamichaniStudents.length;
+
+  // Zamíchání žáků před rozdělením
+  const students = zamichatPole(nezamichaniStudents);
 
   // 1. Urči počet skupin
   let pocetSkupin = typRozdeleni === 'pocetSkupin'
