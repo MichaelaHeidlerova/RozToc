@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 export const ListDetail = ({ data }) => {
   const params = useParams();
@@ -58,10 +58,29 @@ export const ListDetail = ({ data }) => {
     setList(novySeznam);
     save(novySeznam);
   };
+  const navigate = useNavigate();
+  const removeClass = () => {
+    if (window.confirm('Opravdu chceš smazat třídu?') === false) {
+      return;
+    }
+
+    const seznamTrid = JSON.parse(localStorage.getItem('seznamTrid'));
+    const upravenySeznamTrid = seznamTrid.filter((row) => {
+      return row.nazevTridy !== params.id;
+    });
+    localStorage.setItem('seznamTrid', JSON.stringify(upravenySeznamTrid));
+    const upravenySeznamZaku = list.filter((row) => {
+      return row.trida !== params.id;
+    });
+    save(upravenySeznamZaku);
+    navigate('/class-list');
+  };
+
   return (
     <div className="list-detail">
       <div className="pageTitle">
         <h2>{params.id}</h2>
+        <button onClick={removeClass}>Odebrat třídu</button>
       </div>
       <table className="students-table">
         <thead>
