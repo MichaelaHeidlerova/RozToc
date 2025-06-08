@@ -1,5 +1,5 @@
 import { rozdelDoSkupin } from '../../pages/Groups/rozdelDoSkupin';
-import './vlastnosti.css';
+import './Vlastnosti.css';
 import React, { useEffect, useState } from 'react';
 
 export const Vlastnosti = ({ zaciVeSkupine }) => {
