@@ -3,7 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 export const ListDetail = ({ data }) => {
   const params = useParams();
-  const [list, setList] = useState(data);
+  const [list, setList] = useState(data??[]);
 
   // Formulářové stavy (každý input má svůj)
   const [celeJmeno, setCeleJmeno] = useState('');

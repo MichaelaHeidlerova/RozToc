@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export const ClassList = ({ data }) => {
   const [list, setList] = useState(
-    JSON.parse(localStorage.getItem('seznamTrid')),
+    JSON.parse(localStorage.getItem('seznamTrid'))??[],
   );
   const [novaTrida, setNovaTrida] = useState('');
 
