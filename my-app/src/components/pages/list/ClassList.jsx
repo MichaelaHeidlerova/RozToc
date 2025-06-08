@@ -3,23 +3,51 @@ import { Link } from 'react-router-dom';
 
 export const ClassList = ({ data }) => {
   const [list, setList] = useState(data);
+  const [novaTrida, setNovaTrida] = useState('');
+
+  const handlePridejTridu = () => {
+    const nazev = novaTrida.trim();
+
+    if (nazev === '') return;
+    if (list.some((trida) => trida.nazevTridy === nazev)) {
+      alert('Třída už existuje!');
+      return;
+    }
+
+    const nova = { nazevTridy: nazev };
+    const novePole = [...list, nova];
+    setList(novePole);
+    setNovaTrida('');
+
+    // Nepovinné: uložení do localStorage
+    localStorage.setItem('seznamTrid', JSON.stringify(novePole));
+  };
 
   return (
     <div>
-    <div className="pageTitle">
-          <h2>MOJE TŘÍDY</h2>
-    </div>
-    <div className="numberOfGroup">
-      {/* Pro každou třídu vykresli jeden čtvereček */}
-      
-      {list?.map((row) => (
-        <Link to={`/class-detail/${row.nazevTridy}`}>
-        <div key={row.nazevTridy} className="number">
-          {row.nazevTridy}
-        </div>
-        </Link>
-      ))}
-    </div>
+      <div className="pageTitle">
+        <h2>MOJE TŘÍDY</h2>
+        
+      </div>
+
+      <div className="numberOfGroup">
+        {list?.map((row) => (
+          <Link to={`/class-detail/${row.nazevTridy}`} key={row.nazevTridy}>
+            <div className="number">{row.nazevTridy}</div>
+          </Link>
+        ))}
+      </div>
+
+      {/* Formulář pro přidání nové třídy */}
+      <div className="add-class-form">
+        <input
+          type="text"
+          placeholder="Zadej název třídy (např. 5B)"
+          value={novaTrida}
+          onChange={(e) => setNovaTrida(e.target.value)}
+        />
+        <button onClick={handlePridejTridu}>Přidat třídu</button>
+      </div>
     </div>
   );
 };

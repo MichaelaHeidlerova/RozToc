@@ -36,8 +36,8 @@ export const ListDetail = ({ data }) => {
       socialni: Number(socialni),
       trida: params.id,
     };
-
-    setList([...list, newEntry]);
+    const novySeznam = [...list, newEntry];
+    setList(novySeznam);
 
     // Vyčištění formuláře
     setCeleJmeno('');
@@ -45,32 +45,33 @@ export const ListDetail = ({ data }) => {
     setBystrost('');
     setSamostatnost('');
     setSocialni('');
+    save(novySeznam);
   };
-  const save = () => {
-    localStorage.setItem('seznamZaku', JSON.stringify(list));
+  const save = (seznamKulozeni) => {
+    localStorage.setItem('seznamZaku', JSON.stringify(seznamKulozeni));
   };
+
   const remove = (plneJmeno) => {
-    setList(
-      list.filter((row) => {
-        return row.celeJmeno !== plneJmeno;
-      }),
-    );
+    const novySeznam = list.filter((row) => {
+      return row.celeJmeno !== plneJmeno;
+    });
+    setList(novySeznam);
+    save(novySeznam);
   };
   return (
     <div className="list-detail">
       <div className="pageTitle">
         <h2>{params.id}</h2>
-        <button onClick={save}>Uložit</button>
       </div>
       <table className="students-table">
         <thead>
           <tr>
-            <th className='thVlastnosti'>Příjmení a jméno</th>
-            <th className='thVlastnosti'>Pohlaví</th>
-            <th className='thVlastnosti'>Bystrost</th>
-            <th className='thVlastnosti'>Samostatnost</th>
-            <th className='thVlastnosti'>Sociálnost</th>
-            <th className='thVlastnosti'>Přidání/odebrání žáka</th>
+            <th className="thVlastnosti">Příjmení a jméno</th>
+            <th className="thVlastnosti">Pohlaví</th>
+            <th className="thVlastnosti">Bystrost</th>
+            <th className="thVlastnosti">Samostatnost</th>
+            <th className="thVlastnosti">Sociálnost</th>
+            <th className="thVlastnosti">Přidání/odebrání žáka</th>
           </tr>
         </thead>
         <tbody>
@@ -83,7 +84,7 @@ export const ListDetail = ({ data }) => {
 
               return (
                 <tr key={row.celeJmeno}>
-                  <td className='tdJmeno'>{row.celeJmeno}</td>
+                  <td className="tdJmeno">{row.celeJmeno}</td>
                   <td>{vysledek}</td>
                   <td>{row.bystrost}</td>
                   <td>{row.samostatnost}</td>
