@@ -88,33 +88,23 @@ body {
 .instructions,
 .timer,
 .aboutUs {
-  display: flex;
-  flex-direction: column;
-  max-width: 1280px;
   width: 90%;
   height: 150px;
-  justify-content: center;
-  align-items: center;
-  border: 3px solid;
-  border-color: black;
-  background-color: #AC723C;
   margin: 6px;
 }
 
 .drawersBtn {
   font-size: 30px;
   font-weight: bolder;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   padding: 10px;
   text-decoration: none;
   color: black;
-  background: transparent;
-  border: none;
   cursor: pointer;
   width: 100%;
   height: 100%;
+  border: 3px solid;
+  border-color: black;
+  background-color: #AC723C;
 }
 
 h1 {
@@ -191,6 +181,15 @@ h2 {
   font-size: 28px;
 }
 
+td, .thVlastnosti {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.tdJmeno {
+  text-align: left;
+}
 
 @media (max-width: 768px) {
 

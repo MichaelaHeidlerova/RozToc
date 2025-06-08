@@ -22,7 +22,7 @@ export const Nepritomnost = ({ setStep }) => {
   return (
     <div>
       <div className="pageTitle">
-          <h2>Nepřítomnost</h2>
+          <h2>OZNAČ NEPŘÍTOMNÉ ŽAKY</h2>
       </div>
       <p>Zde bude správa nepřítomností studentů.</p>
       <ul>

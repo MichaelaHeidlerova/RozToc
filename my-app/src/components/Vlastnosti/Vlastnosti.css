@@ -1,12 +1,18 @@
 .selectFormation {
   display: flex;
   flex-direction: row;
-  gap: 10px;
+  gap: 40px;
+  justify-content: center;
 }
 
-.selectFormation button {
-  font-size: 30px;
-  font-family: "Lexend", sans-serif;
-  padding: 10px;
-  color: black;
+.howManyGroups {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  justify-content: center;
+}
+
+input[type='checkbox'] {
+  width: 20px;
+  height: 20px;
 }

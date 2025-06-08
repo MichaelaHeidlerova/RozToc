@@ -5,6 +5,10 @@ export const ClassList = ({ data }) => {
   const [list, setList] = useState(data);
 
   return (
+    <div>
+    <div className="pageTitle">
+          <h2>MOJE TŘÍDY</h2>
+    </div>
     <div className="numberOfGroup">
       {/* Pro každou třídu vykresli jeden čtvereček */}
       
@@ -15,6 +19,7 @@ export const ClassList = ({ data }) => {
         </div>
         </Link>
       ))}
+    </div>
     </div>
   );
 };

@@ -1,19 +1,15 @@
 import { Vlastnosti } from "../../components/Vlastnosti/Vlastnosti";
 import React, { useState } from "react";
 import { Nepritomnost } from "./Nepritomnost";
+import { VytvoreniSkupin } from "./VytvoreniSkupin";
 
 export const Groups = () => {
   const [step, setStep] = useState("vytvoreniSkupin");
 
   if (step === "vytvoreniSkupin") {
     return (
-      <div>
-        <div className="pageTitle">
-          <h2>Vytvoření skupin</h2>
-        </div>
-        <p>Zde bude správa vytváření skupin.</p>
-        <button onClick={() => setStep("nepritomnost")}>Pokračovat na nepřítomnost</button>
-      </div>
+      <VytvoreniSkupin
+        setStep={setStep} />
     );
     
   } else if (step === "nepritomnost") {

@@ -65,12 +65,12 @@ export const ListDetail = ({ data }) => {
       <table className="students-table">
         <thead>
           <tr>
-            <th>Příjmení a jméno</th>
-            <th>Pohlaví</th>
-            <th>Bystrost</th>
-            <th>Samostatnost</th>
-            <th>Sociálnost</th>
-            <th>Akce</th>
+            <th className='thVlastnosti'>Příjmení a jméno</th>
+            <th className='thVlastnosti'>Pohlaví</th>
+            <th className='thVlastnosti'>Bystrost</th>
+            <th className='thVlastnosti'>Samostatnost</th>
+            <th className='thVlastnosti'>Sociálnost</th>
+            <th className='thVlastnosti'>Přidání/odebrání žáka</th>
           </tr>
         </thead>
         <tbody>
@@ -83,7 +83,7 @@ export const ListDetail = ({ data }) => {
 
               return (
                 <tr key={row.celeJmeno}>
-                  <td>{row.celeJmeno}</td>
+                  <td className='tdJmeno'>{row.celeJmeno}</td>
                   <td>{vysledek}</td>
                   <td>{row.bystrost}</td>
                   <td>{row.samostatnost}</td>

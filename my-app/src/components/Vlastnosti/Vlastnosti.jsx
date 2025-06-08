@@ -57,7 +57,7 @@ export const Vlastnosti = ({}) => {
   return (
     <div>
         <div className="pageTitle">
-          <h2>ZOHLEDNĚNÍ VLASTNOSTÍ</h2>
+          <h2>ZOHLEDNI VLASTNOSTI</h2>
         </div>
 
       <div className="pageContent">
@@ -70,7 +70,7 @@ export const Vlastnosti = ({}) => {
               checked={vybraneVlastnosti['pohlaví'] || false}
               onChange={handleVlastnostChange}
             />
-            <label for="scales">POHLAVÍ</label>
+            <label>POHLAVÍ</label>
             <input
               type="checkbox"
               id="samostatnáPráce"
@@ -78,7 +78,7 @@ export const Vlastnosti = ({}) => {
               checked={vybraneVlastnosti['samostatnáPráce'] || false}
               onChange={handleVlastnostChange}
             />
-            <label for="horns">SCHOPNOST SAMOSTATNÉ PRÁCE</label>
+            <label>SCHOPNOST SAMOSTATNÉ PRÁCE</label>
           </div>
           <div>
             <input
@@ -88,7 +88,7 @@ export const Vlastnosti = ({}) => {
               checked={vybraneVlastnosti['bystrost'] || false}
               onChange={handleVlastnostChange}
             />
-            <label for="scales">BYSTROST/NADÁNÍ</label>
+            <label>BYSTROST/NADÁNÍ</label>
             <input
               type="checkbox"
               id="sociálníDovednosti"
@@ -96,12 +96,12 @@ export const Vlastnosti = ({}) => {
               checked={vybraneVlastnosti['sociálníDovednosti'] || false}
               onChange={handleVlastnostChange}
             />
-            <label for="horns">SOCIÁLNÍ DOVEDNOSTI</label>
+            <label>SOCIÁLNÍ DOVEDNOSTI</label>
           </div>
         </div>
         <div className="selectFormation">
           <div className="numberOfStudents">
-            <button
+            <button className="drawersBtn"
               onClick={() => {
                 setTypSkupin('pocetSkupin');
                 setPocetZaku('');
@@ -111,7 +111,7 @@ export const Vlastnosti = ({}) => {
             </button>
           </div>
           <div className="numberOfStudents">
-            <button
+            <button className="drawersBtn"
               onClick={() => {
                 setTypSkupin('pocetZaku');
                 setPocetSkupin('');

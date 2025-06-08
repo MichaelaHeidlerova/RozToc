@@ -1,6 +1,9 @@
 export const AboutUs = () => {
   return (
     <div className="about-us">
+        <div className="pageTitle">
+          <h2>O NÁS</h2>
+        </div>
       <p>
       Jsme Gábina a Míša a společně tvoříme super tým!
       Mrkni na naše GitHuby:
