@@ -1,7 +1,7 @@
 import { seznam as zaci } from '../../seznam';
 import { useState } from 'react';
 
-export const Nepritomnost = ({ setStep }) => {
+export const Nepritomnost = ({ setStep, aktivniTrida }) => {
   const [pritomniZaci, setPritomniZaci] = useState({});
 
   useState(() => {
@@ -19,6 +19,8 @@ export const Nepritomnost = ({ setStep }) => {
     }));
   };
 
+  console.log('Aktivní třída:', aktivniTrida);
+  
   return (
     <div>
       <div className="pageTitle">

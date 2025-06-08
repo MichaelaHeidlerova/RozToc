@@ -1,5 +1,5 @@
 
-export const VytvoreniSkupin = ({ setStep}) => {
+export const VytvoreniSkupin = ({ setStep, aktivniTridaHandler }) => {
   const volaniSkupin = JSON.parse(localStorage.getItem('seznamTrid')) || [];
 
   return (
@@ -9,9 +9,9 @@ export const VytvoreniSkupin = ({ setStep}) => {
         </div>
         <div className="numberOfGroup">
         {volaniSkupin?.map((row) => (
-        <div key={row.nazevTridy} className="number">
+        <button key={row.nazevTridy} className="number" onClick={() => aktivniTridaHandler(row.nazevTridy)}>
           {row.nazevTridy}
-        </div>
+        </button>
       ))}
       </div>
         <button onClick={() => setStep("nepritomnost")}>Pokračovat na nepřítomnost</button>
