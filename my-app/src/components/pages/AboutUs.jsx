@@ -1,3 +1,6 @@
+import foto_M from "../../img/foto_M.jpg";
+import foto_G from "../../img/foto_G.jpeg";
+
 export const AboutUs = () => {
   return (
     <div className="about-us">
@@ -11,14 +14,14 @@ export const AboutUs = () => {
       <div class="icons-wrapper">
         <a href="https://github.com/GabinaUrbanova?tab=packages">
           <img
-            src="./pages/HomePage/img/foto_G.jpeg"
+            src={foto_G}
             alt="Ikona_Gábina"
             class="icon-button"
           />
         </a>
         <a href="https://github.com/MichaelaHeidlerova">
           <img
-            src="./pages/HomePage/img/foto_M.jpg"
+            src={foto_M}
             alt="Ikona_Míša"
             class="icon-button"
           />
