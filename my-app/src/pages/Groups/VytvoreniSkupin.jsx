@@ -1,4 +1,6 @@
-export const VytvoreniSkupin = ({ setStep, aktivniTridaHandler }) => {
+import { Link } from 'react-router-dom';
+
+export const VytvoreniSkupin = () => {
   const volaniSkupin = JSON.parse(localStorage.getItem('seznamTrid')) || [];
 
   return (
@@ -8,13 +10,9 @@ export const VytvoreniSkupin = ({ setStep, aktivniTridaHandler }) => {
       </div>
       <div className="numberOfGroup">
         {volaniSkupin?.map((row) => (
-          <button
-            key={row.nazevTridy}
-            className="number"
-            onClick={() => aktivniTridaHandler(row.nazevTridy)}
-          >
-            {row.nazevTridy}
-          </button>
+          <Link to={`/groups/${row.nazevTridy}`} key={row.nazevTridy}>
+            <div className="number">{row.nazevTridy}</div>
+          </Link>
         ))}
       </div>
     </div>

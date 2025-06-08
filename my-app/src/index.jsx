@@ -5,12 +5,10 @@ import './global.css';
 import { AboutUs } from './components/pages/AboutUs';
 import { Intro } from './components/pages/Intro';
 import { Instruction } from './components/pages/Instruction';
-import { Vlastnosti } from './components/Vlastnosti/Vlastnosti';
 import { ListDetail } from './components/pages/list/ListDetail';
-import { seznam } from './seznam';
 import { Groups } from './pages/Groups/Groups';
-import { seznamTrid } from './seznamTrid';
 import { ClassList } from './components/pages/list/ClassList';
+import { VytvoreniSkupin } from './pages/Groups/VytvoreniSkupin';
 
 createRoot(document.querySelector('#app')).render(
   <BrowserRouter>
@@ -19,7 +17,8 @@ createRoot(document.querySelector('#app')).render(
         <Route path="about-us" element={<AboutUs></AboutUs>}></Route>
         <Route index element={<Intro></Intro>}></Route>
         <Route path="instruction" element={<Instruction></Instruction>}></Route>
-        <Route path="groups" element={<Groups />}></Route>
+        <Route path="groups" element={<VytvoreniSkupin />}></Route>
+        <Route path="groups/:id" element={<Groups />}></Route>
         <Route
           path="class-detail/:id"
           element={<ListDetail data={JSON.parse(localStorage.getItem('seznamZaku'))}></ListDetail>}
