@@ -11,7 +11,7 @@ import { ClassList } from './components/pages/list/ClassList';
 import { VytvoreniSkupin } from './pages/Groups/VytvoreniSkupin';
 
 createRoot(document.querySelector('#app')).render(
-  <BrowserRouter>
+  <BrowserRouter basename="/RozToc">
     <Routes>
       <Route element={<HomePage />}>
         <Route path="about-us" element={<AboutUs></AboutUs>}></Route>
