@@ -27,7 +27,7 @@ createRoot(document.querySelector('#app')).render(
         <Route
           path="class-list"
           element={
-            <ClassList data={JSON.parse(localStorage.getItem('seznamTrid'))}></ClassList>
+            <ClassList></ClassList>
           }
         ></Route>
       </Route>
