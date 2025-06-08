@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import mites from "../img/mites.jpg";
+import mites from "../img/mites.JPG";
 import schoolThings from "../img/schoolThings.jpg";
 
 export const Header = () => {
