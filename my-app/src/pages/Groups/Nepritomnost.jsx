@@ -1,8 +1,13 @@
 import { useState } from 'react';
 
-export const Nepritomnost = ({ setStep, aktivniTrida, zaciVeSkupine, setZaciVeSkupine }) => {
+export const Nepritomnost = ({
+  setStep,
+  aktivniTrida,
+  zaciVeSkupine,
+  setZaciVeSkupine,
+}) => {
   const [pritomniZaci, setPritomniZaci] = useState({});
-  
+
   const vsichniZaci = JSON.parse(localStorage.getItem('seznamZaku')) || [];
 
   const zaci = vsichniZaci.filter((zak) => zak.trida === aktivniTrida);
@@ -27,7 +32,6 @@ export const Nepritomnost = ({ setStep, aktivniTrida, zaciVeSkupine, setZaciVeSk
       <div className="pageTitle">
         <h2>OZNAČ NEPŘÍTOMNÉ ŽAKY</h2>
       </div>
-      <p>Zde bude správa nepřítomností studentů.</p>
       <ul>
         {zaci.map((zak) => (
           <li key={zak.celeJmeno}>
@@ -42,18 +46,22 @@ export const Nepritomnost = ({ setStep, aktivniTrida, zaciVeSkupine, setZaciVeSk
           </li>
         ))}
       </ul>
-      <button
-        onClick={() => {
-          const pritomniZaciList = zaci.filter(
-            (zak) => pritomniZaci[zak.celeJmeno],
-          );
-          console.log('Přítomní žáci:', pritomniZaciList);
-          setZaciVeSkupine(pritomniZaciList);
-          setStep('vlastnosti');
-        }}
-      >
-        Pokračovat na vlastnosti
-      </button>
+      {zaci.length === 0 ? (
+        <p>Žádní žáci ve třídě {aktivniTrida}.</p>
+      ) : (
+        <button
+          onClick={() => {
+            const pritomniZaciList = zaci.filter(
+              (zak) => pritomniZaci[zak.celeJmeno],
+            );
+            console.log('Přítomní žáci:', pritomniZaciList);
+            setZaciVeSkupine(pritomniZaciList);
+            setStep('vlastnosti');
+          }}
+        >
+          Pokračovat na vlastnosti
+        </button>
+      )}
     </div>
   );
 };
