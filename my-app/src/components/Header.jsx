@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
+import mites from "../img/mites.jpg";
+import schoolThings from "../img/schoolThings.jpg";
 
 export const Header = () => {
   return (
     <div className="header">
       <div className="mites">
-        <img src="./pages/HomePage/img/mites.JPG" alt="Mites" />
+        <img src={mites} alt="Mites" />
       </div>
       <Link to="/">
       <div className="title">
@@ -12,7 +14,7 @@ export const Header = () => {
       </div>
       </Link>
       <div className="schoolThings">
-        <img src="./pages/HomePage/img/schoolThings.jpg" alt="School things" />
+        <img src={schoolThings} alt="School things" />
       </div>
     </div>
   );

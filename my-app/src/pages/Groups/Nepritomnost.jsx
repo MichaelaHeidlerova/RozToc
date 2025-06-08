@@ -1,8 +1,10 @@
-import { seznam as zaci } from '../../seznam';
 import { useState } from 'react';
 
-export const Nepritomnost = ({ setStep, aktivniTrida }) => {
-  const [pritomniZaci, setPritomniZaci] = useState({});
+export const Nepritomnost = ({ setStep, aktivniTrida, pritomniZaci, setPritomniZaci }) => {
+  
+  const vsichniZaci = JSON.parse(localStorage.getItem('seznamZaku')) || [];
+
+  const zaci = vsichniZaci.filter((zak) => zak.trida === aktivniTrida);
 
   useState(() => {
     const initialPritomni = {};
@@ -19,12 +21,10 @@ export const Nepritomnost = ({ setStep, aktivniTrida }) => {
     }));
   };
 
-  console.log('Aktivní třída:', aktivniTrida);
-  
   return (
     <div>
       <div className="pageTitle">
-          <h2>OZNAČ NEPŘÍTOMNÉ ŽAKY</h2>
+        <h2>OZNAČ NEPŘÍTOMNÉ ŽAKY</h2>
       </div>
       <p>Zde bude správa nepřítomností studentů.</p>
       <ul>

@@ -1,29 +1,21 @@
 import { Vlastnosti } from "../../components/Vlastnosti/Vlastnosti";
-import React, { useState } from "react";
+import { useState } from "react";
 import { Nepritomnost } from "./Nepritomnost";
-import { VytvoreniSkupin } from "./VytvoreniSkupin";
+import { useParams } from "react-router-dom";
 
 export const Groups = () => {
-  const [step, setStep] = useState("vytvoreniSkupin");
-  const [aktivniTrida, setAktivniTrida] = useState("vytvoreniSkupin");
+  const [step, setStep] = useState("nepritomnost");
+  const [pritomniZaci, setPritomniZaci] = useState({});
 
-  const aktivniTridaHandler = ( vybranaTrida ) => { 
-    setAktivniTrida(vybranaTrida);
-    setStep("nepritomnost");
-  }
+  const params = useParams();
 
-  if (aktivniTrida === "vytvoreniSkupin") {
-    return (
-      <VytvoreniSkupin
-        setStep={setStep}
-        aktivniTridaHandler={aktivniTridaHandler} />
-    );
-    
-  } else if (step === "nepritomnost") {
+if (step === "nepritomnost") {
     return (
       <Nepritomnost 
         setStep={setStep}
-        aktivniTrida={aktivniTrida}
+        aktivniTrida={params.id}
+        pritomniZaci={pritomniZaci}
+        setPritomniZaci={setPritomniZaci}
       />
     );
   } else if (step === "vlastnosti") {
