@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
-export const Nepritomnost = ({ setStep, aktivniTrida, pritomniZaci, setPritomniZaci }) => {
+export const Nepritomnost = ({ setStep, aktivniTrida, zaciVeSkupine, setZaciVeSkupine }) => {
+  const [pritomniZaci, setPritomniZaci] = useState({});
   
   const vsichniZaci = JSON.parse(localStorage.getItem('seznamZaku')) || [];
 
@@ -47,6 +48,7 @@ export const Nepritomnost = ({ setStep, aktivniTrida, pritomniZaci, setPritomniZ
             (zak) => pritomniZaci[zak.celeJmeno],
           );
           console.log('Přítomní žáci:', pritomniZaciList);
+          setZaciVeSkupine(pritomniZaciList);
           setStep('vlastnosti');
         }}
       >

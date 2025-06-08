@@ -5,7 +5,11 @@ import { useParams } from "react-router-dom";
 
 export const Groups = () => {
   const [step, setStep] = useState("nepritomnost");
-  const [pritomniZaci, setPritomniZaci] = useState({});
+  const [zaciVeSkupine, setZaciVeSkupine] = useState([]);
+
+const vypocitejVysledek = () => {
+  console.log("Vypočítávám výsledek...");
+}
 
   const params = useParams();
 
@@ -14,13 +18,15 @@ if (step === "nepritomnost") {
       <Nepritomnost 
         setStep={setStep}
         aktivniTrida={params.id}
-        pritomniZaci={pritomniZaci}
-        setPritomniZaci={setPritomniZaci}
+        zaciVeSkupine={zaciVeSkupine}
+        setZaciVeSkupine={setZaciVeSkupine}
       />
     );
   } else if (step === "vlastnosti") {
     return (
-      <Vlastnosti />
+      <Vlastnosti 
+        zaciVeSkupine={zaciVeSkupine}
+      />
     );
   };
 };

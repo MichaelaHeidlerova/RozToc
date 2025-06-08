@@ -1,7 +1,8 @@
+import { rozdelDoSkupin } from '../../pages/Groups/rozdelDoSkupin';
 import './vlastnosti.css';
 import React, { useEffect, useState } from 'react';
 
-export const Vlastnosti = ({}) => {
+export const Vlastnosti = ({ zaciVeSkupine }) => {
   const [typSkupin, setTypSkupin] = useState();
   const [vybraneVlastnosti, setVybraneVlastnosti] = useState({});
   const [pocetSkupin, setPocetSkupin] = useState('');
@@ -24,14 +25,18 @@ export const Vlastnosti = ({}) => {
   };
 
   const handleVytvorSkupiny = () => {
-    const dataProSkupiny = {
+    const dataProSkupiny = {      
       vybraneVlastnosti: vybraneVlastnosti,
       typSkupin: typSkupin,
       pocetSkupin: typSkupin === 'pocetSkupin' ? pocetSkupin : null,
       pocetZaku: typSkupin === 'pocetZaku' ? pocetZaku : null,
     };
 
-    console.log('Data pro skupiny:', dataProSkupiny);
+const vysledek = rozdelDoSkupin( zaciVeSkupine, vybraneVlastnosti, typSkupin, typSkupin === 'pocetSkupin' ? pocetSkupin : pocetZaku);
+
+//    console.log('Data pro skupiny:', dataProSkupiny);
+
+console.log('Výsledek rozdělení:', vysledek);
 
     if (typSkupin === 'pocetSkupin') {
       console.log(`Vytvářím ${pocetSkupin} skupin.`);
@@ -43,15 +48,15 @@ export const Vlastnosti = ({}) => {
   };
 
   useEffect(() => {
-    console.log('Vybrané vlastnosti:', vybraneVlastnosti);
+//    console.log('Vybrané vlastnosti:', vybraneVlastnosti);
   }, [vybraneVlastnosti]);
 
   useEffect(() => {
-    console.log('Počet skupin:', pocetSkupin);
+//    console.log('Počet skupin:', pocetSkupin);
   }, [pocetSkupin]);
 
   useEffect(() => {
-    console.log('Počet žáků:', pocetZaku);
+//    console.log('Počet žáků:', pocetZaku);
   }, [pocetZaku]);
 
   return (
@@ -65,17 +70,17 @@ export const Vlastnosti = ({}) => {
           <div>
             <input
               type="checkbox"
-              id="pohlaví"
-              name="pohlaví"
-              checked={vybraneVlastnosti['pohlaví'] || false}
+              id="pohlavi"
+              name="pohlavi"
+              checked={vybraneVlastnosti['pohlavi'] || false}
               onChange={handleVlastnostChange}
             />
             <label>POHLAVÍ</label>
             <input
               type="checkbox"
-              id="samostatnáPráce"
-              name="samostatnáPráce"
-              checked={vybraneVlastnosti['samostatnáPráce'] || false}
+              id="samostatnost"
+              name="samostatnost"
+              checked={vybraneVlastnosti['samostatnost'] || false}
               onChange={handleVlastnostChange}
             />
             <label>SCHOPNOST SAMOSTATNÉ PRÁCE</label>
@@ -91,9 +96,9 @@ export const Vlastnosti = ({}) => {
             <label>BYSTROST/NADÁNÍ</label>
             <input
               type="checkbox"
-              id="sociálníDovednosti"
-              name="sociálníDovednosti"
-              checked={vybraneVlastnosti['sociálníDovednosti'] || false}
+              id="socialni"
+              name="socialni"
+              checked={vybraneVlastnosti['socialni'] || false}
               onChange={handleVlastnostChange}
             />
             <label>SOCIÁLNÍ DOVEDNOSTI</label>
