@@ -3,8 +3,8 @@ export const rozdelDoSkupin = (students, vlastnosti, typRozdeleni, hodnota) => {
 
   // 1. Urči počet skupin
   let pocetSkupin = typRozdeleni === 'pocetSkupin'
-    ? hodnota
-    : Math.ceil(pocetZaku / hodnota);
+    ? Number(hodnota)
+    : Math.ceil(pocetZaku / Number(hodnota));
 
   // Ošetření případu, kdy je počet skupin 0 nebo NaN
   if (!pocetSkupin || pocetSkupin <= 0) {

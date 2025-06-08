@@ -2,7 +2,7 @@ import { rozdelDoSkupin } from '../../pages/Groups/rozdelDoSkupin';
 import './vlastnosti.css';
 import React, { useEffect, useState } from 'react';
 
-export const Vlastnosti = ({ zaciVeSkupine }) => {
+export const Vlastnosti = ({ zaciVeSkupine, setVysledek, setStep }) => {
   const [typSkupin, setTypSkupin] = useState();
   const [vybraneVlastnosti, setVybraneVlastnosti] = useState({});
   const [pocetSkupin, setPocetSkupin] = useState('');
@@ -36,7 +36,10 @@ const vysledek = rozdelDoSkupin( zaciVeSkupine, vybraneVlastnosti, typSkupin, ty
 
 //    console.log('Data pro skupiny:', dataProSkupiny);
 
-console.log('Výsledek rozdělení:', vysledek);
+console.log('Výsledek rozdělení:', setVysledek);
+
+setVysledek(vysledek);
+setStep('vysledek');
 
     if (typSkupin === 'pocetSkupin') {
       console.log(`Vytvářím ${pocetSkupin} skupin.`);
