@@ -1,3 +1,5 @@
+import mite from "../../img/mite.jpg";
+
 export const Intro = () => {
   return (
     <div className="intro">
@@ -6,7 +8,7 @@ export const Intro = () => {
       <p>Vytvoří skvělé týmy!</p>
       <p>To je náš projekt, co Vaše žáky doslova RozTočí!</p>
       <div className="mite">
-        <img src="./pages/HomePage/img/mite.jpg" alt="Mite" />
+        <img src={mite} alt="Mite" />
       </div>
     </div>
   );
