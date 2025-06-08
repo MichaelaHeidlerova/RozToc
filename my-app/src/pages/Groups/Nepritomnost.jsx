@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
-export const Nepritomnost = ({ setStep, aktivniTrida }) => {
-  const [pritomniZaci, setPritomniZaci] = useState({});
+export const Nepritomnost = ({ setStep, aktivniTrida, pritomniZaci, setPritomniZaci }) => {
+  
   const vsichniZaci = JSON.parse(localStorage.getItem('seznamZaku')) || [];
 
   const zaci = vsichniZaci.filter((zak) => zak.trida === aktivniTrida);
