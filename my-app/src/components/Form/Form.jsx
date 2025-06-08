@@ -1,4 +1,4 @@
-import './form.css';
+import './Form.css';
 
 export const Form = ({ }) => {
   return (
