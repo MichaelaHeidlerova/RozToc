@@ -1,9 +1,16 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
-export const ListDetail = ({ data }) => {
+export const ListDetail = () => {
   const params = useParams();
-  const [list, setList] = useState(data);
+  const [list, setList] = useState([]); // Seznam žáků, který se bude načítat z localStorage
+
+  //const data = 
+
+  useEffect(() => {
+    setList(JSON.parse(localStorage.getItem('seznamZaku')) || []);
+  }, []); // Načtení seznamu žáků z localStorage při prvním renderu 
+    // Načtení seznamu žáků z localStorage při prvním renderusetLis
 
   // Formulářové stavy (každý input má svůj)
   const [celeJmeno, setCeleJmeno] = useState('');

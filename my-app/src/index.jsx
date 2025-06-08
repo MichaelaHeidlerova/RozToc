@@ -22,9 +22,7 @@ createRoot(document.querySelector('#app')).render(
         <Route
           path="class-detail/:id"
           element={
-            <ListDetail
-              data={JSON.parse(localStorage.getItem('seznamZaku'))}
-            ></ListDetail>
+            <ListDetail />
           }
         ></Route>
         <Route path="class-list" element={<ClassList></ClassList>}></Route>
