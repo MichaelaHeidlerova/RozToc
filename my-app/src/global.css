@@ -72,8 +72,8 @@ body {
   display: flex;
   flex-direction: column;
   /* min-width: 340px; */
-  max-width: 100%;
-  max-height: 500px;
+  /* max-width: 100%; */
+  /* max-height: 500px; */
   align-items: center;
   border: 5px solid black;
   border-top: none;
@@ -91,7 +91,7 @@ body {
 .timer,
 .aboutUs {
   width: 90%;
-  height: 150px;
+  min-height: 120px;
   margin: 6px;
 }
 
@@ -199,6 +199,7 @@ td,
 
   .main-container {
     flex-direction: column;
+    width: 100%;
   }
 
   .mites,
@@ -220,6 +221,25 @@ td,
   .board {
     width: 100%;
     padding: 10px;
+  }
+
+  .classManagement,
+  .groupFormation,
+  .instructions,
+  .timer,
+  .aboutUs {
+    width: 95%;
+  }
+
+  .drawersBtn {
+    font-size: 22px;
+    padding: 8px;
+  }
+}
+
+@media (min-width: 769px) {
+  .navigation {
+    width: 340px;
   }
 }
 
