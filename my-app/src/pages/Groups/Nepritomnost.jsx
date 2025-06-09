@@ -30,7 +30,7 @@ export const Nepritomnost = ({
   return (
     <div>
       <div className="pageTitle">
-        <h2>OZNAČ NEPŘÍTOMNÉ ŽAKY</h2>
+        <h2>OZNAČ PŘÍTOMNÉ ŽAKY</h2>
       </div>
       <ul>
         {zaci.map((zak) => (

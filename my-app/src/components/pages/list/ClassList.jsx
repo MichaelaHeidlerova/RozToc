@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export const ClassList = ({ data }) => {
   const [list, setList] = useState(
-    JSON.parse(localStorage.getItem('seznamTrid'))??[],
+    JSON.parse(localStorage.getItem('seznamTrid')) ?? [],
   );
   const [novaTrida, setNovaTrida] = useState('');
 
@@ -28,7 +28,7 @@ export const ClassList = ({ data }) => {
   return (
     <div>
       <div className="pageTitle">
-        <h2>MOJE TŘÍDY</h2>
+        <h2>MOJE TŘÍDY/PŘIDEJ TŘÍDU</h2>
       </div>
 
       <div className="numberOfGroup">
