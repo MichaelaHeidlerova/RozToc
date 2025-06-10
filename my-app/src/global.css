@@ -138,6 +138,7 @@ h2 {
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
+  line-height: 4;
 }
 
 .pageContent {
@@ -350,7 +351,7 @@ input#numberOfStudents, input#numberOfGroups {
 }
 
 ul.no-margin-padding {
-  margin-left: 30px;
+  margin-top: 30px;
   list-style: none;
 }
 
