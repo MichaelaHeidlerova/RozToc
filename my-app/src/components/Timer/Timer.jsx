@@ -2,26 +2,21 @@ import React, { useState, useEffect, useRef } from 'react';
 import './Timer.css';
 
 export const Timer = () => {
-  // === STAV KOMPONENTY ===
-  // Stavy pro odpočítávaný čas (ty se mění při START/PAUZA)
   const [hours, setHours] = useState(0);
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(0);
 
-  // NOVÉ STAVY pro hodnoty, které jsou aktuálně zapsané v input polích
   const [inputHours, setInputHours] = useState('');
   const [inputMinutes, setInputMinutes] = useState('');
   const [inputSeconds, setInputSeconds] = useState('');
 
   const [isRunning, setIsRunning] = useState(false);
-  const [initialTimeSet, setInitialTimeSet] = useState(false); // Byl čas nastaven tlačítkem "Nastavit čas"?
+  const [initialTimeSet, setInitialTimeSet] = useState(false);
 
   const intervalRef = useRef(null);
 
-  // === FUNKCE PRO ZMĚNY V INPUT POLÍCH (řízené komponenty) ===
   const handleInputChange = (e, unit) => {
     const value = e.target.value;
-    // Povolíme pouze čísla a prázdný řetězec
     if (value === '' || /^\d+$/.test(value)) {
       switch (unit) {
         case 'hours':
@@ -39,14 +34,11 @@ export const Timer = () => {
     }
   };
 
-  // === FUNKCE PRO NASTAVENÍ ČASU (po stisknutí tlačítka) ===
   const handleSetTime = () => {
-    // Převedeme hodnoty z input stavů na čísla
     const parsedHours = parseInt(inputHours || '0', 10);
     const parsedMinutes = parseInt(inputMinutes || '0', 10);
     const parsedSeconds = parseInt(inputSeconds || '0', 10);
 
-    // Validace
     if (parsedHours < 0 || parsedMinutes < 0 || parsedSeconds < 0) {
       alert('Čas nemůže být záporný!');
       return;
@@ -56,18 +48,16 @@ export const Timer = () => {
       return;
     }
 
-    // Nastavíme odpočítávací stavy
     setHours(parsedHours);
     setMinutes(parsedMinutes);
     setSeconds(parsedSeconds);
-    setInitialTimeSet(true); // Označíme, že čas byl nastaven
-    setIsRunning(false); // Zajistíme, že časovač není spuštěn hned po nastavení
+    setInitialTimeSet(true);
+    setIsRunning(false);
     if (intervalRef.current) {
-      clearInterval(intervalRef.current); // Pokud náhodou běžel, zastavíme ho
+      clearInterval(intervalRef.current);
     }
   };
 
-  // === FUNKCE PRO OVLÁDÁNÍ ČASOVAČE (START, PAUZA, RESET) ===
   const startTimer = () => {
     if (!initialTimeSet) {
       alert('Nejprve nastavte čas!');
@@ -92,17 +82,15 @@ export const Timer = () => {
     if (intervalRef.current) {
       clearInterval(intervalRef.current);
     }
-    // Resetujeme všechny stavy na výchozí hodnoty
     setHours(0);
     setMinutes(0);
     setSeconds(0);
-    setInputHours(''); // Vyčistíme input pole
-    setInputMinutes(''); // Vyčistíme input pole
-    setInputSeconds(''); // Vyčistíme input pole
+    setInputHours('');
+    setInputMinutes('');
+    setInputSeconds('');
     setInitialTimeSet(false);
   };
 
-  // === useEffect HOOK (Logika odpočítávání) ===
   useEffect(() => {
     if (isRunning) {
       intervalRef.current = setInterval(() => {
@@ -144,14 +132,13 @@ export const Timer = () => {
       <div className="pageTitle">
         <h2>ODPOČET ČASU</h2>
       </div>
-      {/* Sekce pro zadávání času */}
       <div className="setTime">
         <input 
           type="number"
           placeholder="Hodiny"
           min="0"
           max="99"
-          value={inputHours} // Hodnota inputu je řízena stavem `inputHours`
+          value={inputHours}
           onChange={(e) => handleInputChange(e, 'hours')}
         />
         <input
@@ -159,7 +146,7 @@ export const Timer = () => {
           placeholder="Minuty"
           min="0"
           max="59"
-          value={inputMinutes} // Hodnota inputu je řízena stavem `inputMinutes`
+          value={inputMinutes}
           onChange={(e) => handleInputChange(e, 'minutes')} 
         />
         <input
@@ -167,7 +154,7 @@ export const Timer = () => {
           placeholder="Sekundy"
           min="0"
           max="59"
-          value={inputSeconds} // Hodnota inputu je řízena stavem `inputSeconds`
+          value={inputSeconds}
           onChange={(e) => handleInputChange(e, 'seconds')}
         />
         <button
@@ -176,12 +163,10 @@ export const Timer = () => {
         </button>
       </div>
 
-      {/* Zobrazení odpočítávaného času */}
       <div className="timerDisplay">
         {formatTime(hours)}:{formatTime(minutes)}:{formatTime(seconds)}
       </div>
 
-      {/* Tlačítka pro ovládání časovače */}
       <div className='timerControls'>
         <button className='startBtn'
           onClick={startTimer}

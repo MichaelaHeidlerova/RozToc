@@ -1,28 +1,31 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import Tooltip from './Tooltip';
-import trashIcon from "./trash.jpg";
+import trashIcon from './trash.jpg';
 
 export const ListDetail = () => {
   const params = useParams();
-  const [list, setList] = useState(
-    JSON.parse(localStorage.getItem('seznamZaku')) || [],
-  );
+  const [list, setList] = useState([]);
+  const [editingStudent, setEditingStudent] = useState(null);
+  const [editedValues, setEditedValues] = useState({});
 
-  // Formulářové stavy (každý input má svůj)
+  useEffect(() => {
+    const storedList = JSON.parse(localStorage.getItem('seznamZaku')) || [];
+    storedList.sort((a, b) => a.celeJmeno.localeCompare(b.celeJmeno));
+    setList(storedList);
+  }, []);
+
   const [celeJmeno, setCeleJmeno] = useState('');
   const [pohlavi, setPohlavi] = useState('0');
   const [bystrost, setBystrost] = useState('');
   const [samostatnost, setSamostatnost] = useState('');
   const [socialni, setSocialni] = useState('');
 
-  // Pomocná funkce: kontroluje, že hodnoty jsou v rozmezí 1–5
   const isValidValue = (val) => {
     const num = Number(val);
     return Number.isInteger(num) && num >= 1 && num <= 5;
   };
 
-  // Celková validace formuláře
   const isFormValid =
     celeJmeno.trim() !== '' &&
     isValidValue(bystrost) &&
@@ -30,7 +33,7 @@ export const ListDetail = () => {
     isValidValue(socialni);
 
   const handleAdd = () => {
-    if (!isFormValid) return; // Ochrana proti ručnímu spuštění
+    if (!isFormValid) return;
 
     const newEntry = {
       celeJmeno,
@@ -41,9 +44,9 @@ export const ListDetail = () => {
       trida: params.id,
     };
     const novySeznam = [...list, newEntry];
+    novySeznam.sort((a, b) => a.celeJmeno.localeCompare(b.celeJmeno));
     setList(novySeznam);
 
-    // Vyčištění formuláře
     setCeleJmeno('');
     setPohlavi('0');
     setBystrost('');
@@ -56,12 +59,54 @@ export const ListDetail = () => {
   };
 
   const remove = (plneJmeno) => {
+    if (window.confirm('Opravdu chceš odebrat žáka?') === false) {
+      return;
+    }
     const novySeznam = list.filter((row) => {
       return row.celeJmeno !== plneJmeno;
     });
     setList(novySeznam);
     save(novySeznam);
   };
+
+  const handleEdit = (student) => {
+    setEditingStudent(student.celeJmeno);
+    setEditedValues({
+      celeJmeno: student.celeJmeno,
+      pohlavi: student.pohlavi,
+      bystrost: student.bystrost,
+      samostatnost: student.samostatnost,
+      socialni: student.socialni,
+    });
+  };
+
+  const handleSave = (student) => {
+    const updatedList = list.map((item) => {
+      if (item.celeJmeno === student.celeJmeno) {
+        return {
+          ...item,
+          celeJmeno: editedValues.celeJmeno,
+          pohlavi: Number(editedValues.pohlavi),
+          bystrost: Number(editedValues.bystrost),
+          samostatnost: Number(editedValues.samostatnost),
+          socialni: Number(editedValues.socialni),
+        };
+      }
+      return item;
+    });
+    setList(updatedList);
+    save(updatedList);
+    setEditingStudent(null);
+    setEditedValues({});
+  };
+
+  const handleInputChange = (e, field) => {
+    setEditedValues({
+      ...editedValues,
+      [field]: e.target.value,
+    });
+  };
+
   const navigate = useNavigate();
   const removeClass = () => {
     if (window.confirm('Opravdu chceš smazat třídu?') === false) {
@@ -107,8 +152,7 @@ export const ListDetail = () => {
                     3 - Průměrný
                     <br />
                     4 - Podprůměrný
-                    <br />
-                    5 - Slabý
+                    <br />5 - Slabý
                   </>
                 }
               >
@@ -119,15 +163,14 @@ export const ListDetail = () => {
               <Tooltip
                 content={
                   <>
-                    1 - Vysoce samostatný/proaktivní 
+                    1 - Vysoce samostatný/proaktivní
                     <br />
                     2 - Spíše samostatný
                     <br />
-                    3 - Průměrný/občas potřebuje podporu 
+                    3 - Průměrný/občas potřebuje podporu
                     <br />
                     4 - Spíše nesamostatný
-                    <br />
-                    5 - Potřebuje neustálé vedení/nesamostatný 
+                    <br />5 - Potřebuje neustálé vedení/nesamostatný
                   </>
                 }
               >
@@ -138,22 +181,21 @@ export const ListDetail = () => {
               <Tooltip
                 content={
                   <>
-                    1 - Vůdce/motivátor 
+                    1 - Vůdce/motivátor
                     <br />
-                    2 - Aktivní spolupracovník 
+                    2 - Aktivní spolupracovník
                     <br />
                     3 - Průměrný
                     <br />
                     4 - Pasivní/tichý
-                    <br />
-                    5 - Konfliktní/nespolupracující 
+                    <br />5 - Konfliktní/nespolupracující
                   </>
                 }
               >
                 Soc. dovednosti
               </Tooltip>
             </th>
-            <th className="thVlastnosti">Přidání/odebrání žáka</th>
+            <th className="thVlastnosti">Úprava/odebrání žáka</th>
           </tr>
         </thead>
         <tbody>
@@ -162,19 +204,113 @@ export const ListDetail = () => {
               return row.trida === params.id;
             })
             .map((row) => {
+              const isEditing = editingStudent === row.celeJmeno;
               const vysledek = row.pohlavi === 0 ? 'Muž' : 'Žena';
 
               return (
                 <tr key={row.celeJmeno}>
-                  <td className="tdJmeno">{row.celeJmeno}</td>
-                  <td>{vysledek}</td>
-                  <td>{row.bystrost}</td>
-                  <td>{row.samostatnost}</td>
-                  <td>{row.socialni}</td>
+                  <td className="tdJmeno">
+                    {isEditing ? (
+                      <input
+                        type="text"
+                        value={editedValues.celeJmeno || ''}
+                        onChange={(e) => handleInputChange(e, 'celeJmeno')}
+                        className="vlastnost-input-name" /* Použití stejné třídy */
+                      />
+                    ) : (
+                      row.celeJmeno
+                    )}
+                  </td>
                   <td>
-                    <button onClick={() => remove(row.celeJmeno)}>
-                      Odebrat
-                    </button>
+                    {isEditing ? (
+                      <select
+                        value={editedValues.pohlavi || '0'}
+                        onChange={(e) => handleInputChange(e, 'pohlavi')}
+                        className="vlastnost-input"
+                      >
+                        <option value="0">Muž</option>
+                        <option value="1">Žena</option>
+                      </select>
+                    ) : (
+                      vysledek
+                    )}
+                  </td>
+                  <td>
+                    {isEditing ? (
+                      <input
+                        type="number"
+                        min="1"
+                        max="5"
+                        value={editedValues.bystrost || ''}
+                        onChange={(e) => handleInputChange(e, 'bystrost')}
+                        className={`vlastnost-input-number ${
+                          !isValidValue(editedValues.bystrost)
+                            ? 'input-error'
+                            : ''
+                        }`}
+                      />
+                    ) : (
+                      row.bystrost
+                    )}
+                  </td>
+                  <td>
+                    {isEditing ? (
+                      <input
+                        type="number"
+                        min="1"
+                        max="5"
+                        value={editedValues.samostatnost || ''}
+                        onChange={(e) => handleInputChange(e, 'samostatnost')}
+                        className={`vlastnost-input-number ${
+                          !isValidValue(editedValues.samostatnost)
+                            ? 'input-error'
+                            : ''
+                        }`}
+                      />
+                    ) : (
+                      row.samostatnost
+                    )}
+                  </td>
+                  <td>
+                    {isEditing ? (
+                      <input
+                        type="number"
+                        min="1"
+                        max="5"
+                        value={editedValues.socialni || ''}
+                        onChange={(e) => handleInputChange(e, 'socialni')}
+                        className={`vlastnost-input-number ${
+                          !isValidValue(editedValues.socialni)
+                            ? 'input-error'
+                            : ''
+                        }`}
+                      />
+                    ) : (
+                      row.socialni
+                    )}
+                  </td>
+                  <td>
+                    {isEditing ? (
+                      <>
+                        <button onClick={() => handleSave(row)}>Uložit</button>
+                        <button
+                          className="canceledBtn"
+                          onClick={() => setEditingStudent(null)}
+                        >
+                          Zrušit
+                        </button>
+                      </>
+                    ) : (
+                      <div className="action-container">
+                        <button onClick={() => handleEdit(row)}>Upravit</button>
+                        <img
+                          src={trashIcon}
+                          alt="Odebrat žáka"
+                          className="deleteStudent"
+                          onClick={() => remove(row.celeJmeno)}
+                        />
+                      </div>
+                    )}
                   </td>
                 </tr>
               );

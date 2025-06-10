@@ -21,7 +21,6 @@ createRoot(document.querySelector('#app')).render(
         <Route path="groups" element={<VytvoreniSkupin />}></Route>
         <Route path="groups/:id" element={<Groups />}></Route>
         <Route path="timer" element={<Timer />}></Route>
-        {/* Všechny cesty pro správu tříd */}
         <Route
           path="class-detail/:id"
           element={

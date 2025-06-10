@@ -34,8 +34,6 @@ export const Vlastnosti = ({ zaciVeSkupine, setVysledek, setStep }) => {
 
 const vysledek = rozdelDoSkupin( zaciVeSkupine, vybraneVlastnosti, typSkupin, typSkupin === 'pocetSkupin' ? pocetSkupin : pocetZaku);
 
-//    console.log('Data pro skupiny:', dataProSkupiny);
-
 console.log('Výsledek rozdělení:', setVysledek);
 
 setVysledek(vysledek);
@@ -51,15 +49,12 @@ setStep('vysledek');
   };
 
   useEffect(() => {
-//    console.log('Vybrané vlastnosti:', vybraneVlastnosti);
   }, [vybraneVlastnosti]);
 
   useEffect(() => {
-//    console.log('Počet skupin:', pocetSkupin);
   }, [pocetSkupin]);
 
   useEffect(() => {
-//    console.log('Počet žáků:', pocetZaku);
   }, [pocetZaku]);
 
   return (
