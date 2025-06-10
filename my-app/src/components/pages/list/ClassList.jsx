@@ -21,7 +21,6 @@ export const ClassList = ({ data }) => {
     setList(novePole);
     setNovaTrida('');
 
-    // Nepovinné: uložení do localStorage
     localStorage.setItem('seznamTrid', JSON.stringify(novePole));
   };
 
@@ -43,16 +42,19 @@ export const ClassList = ({ data }) => {
         </div>
       )}
 
-      {/* Formulář pro přidání nové třídy */}
       <div className="add-class-form">
-        <input className='inputClass'
+        <input
+          className="inputClass"
           type="text"
           placeholder="Zadej název třídy (např. 5.B)"
           value={novaTrida}
           onChange={(e) => setNovaTrida(e.target.value)}
+          maxLength="5"
         />
         <br />
-        <button onClick={handlePridejTridu}>Přidat třídu</button>
+        <button className="addClass" onClick={handlePridejTridu}>
+          Přidat třídu
+        </button>
       </div>
     </div>
   );

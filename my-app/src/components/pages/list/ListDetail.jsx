@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import Tooltip from './Tooltip';
+import trashIcon from "./trash.jpg";
 
 export const ListDetail = () => {
   const params = useParams();
@@ -83,7 +84,12 @@ export const ListDetail = () => {
     <div className="list-detail">
       <div className="pageTitle">
         <h2>{params.id}</h2>
-        <button onClick={removeClass}>Odebrat třídu</button>
+        <img
+          src={trashIcon}
+          alt="Odebrat třídu"
+          className="removeClassIcon"
+          onClick={removeClass}
+        />
       </div>
       <table className="students-table">
         <thead>
@@ -179,7 +185,7 @@ export const ListDetail = () => {
                 value={celeJmeno}
                 onChange={(e) => setCeleJmeno(e.target.value)}
                 placeholder="Zadej celé jméno žáka"
-                className="vlastnost-input"
+                className="vlastnost-input-name"
               />
             </td>
             <td>
@@ -199,7 +205,7 @@ export const ListDetail = () => {
                 max="5"
                 value={bystrost}
                 onChange={(e) => setBystrost(e.target.value)}
-                className={`vlastnost-input ${
+                className={`vlastnost-input-number ${
                   !isValidValue(bystrost) ? 'input-error' : ''
                 }`}
               />
@@ -211,7 +217,7 @@ export const ListDetail = () => {
                 max="5"
                 value={samostatnost}
                 onChange={(e) => setSamostatnost(e.target.value)}
-                className={`vlastnost-input ${
+                className={`vlastnost-input-number ${
                   !isValidValue(samostatnost) ? 'input-error' : ''
                 }`}
               />
@@ -223,7 +229,7 @@ export const ListDetail = () => {
                 max="5"
                 value={socialni}
                 onChange={(e) => setSocialni(e.target.value)}
-                className={`vlastnost-input ${
+                className={`vlastnost-input-number ${
                   !isValidValue(socialni) ? 'input-error' : ''
                 }`}
               />

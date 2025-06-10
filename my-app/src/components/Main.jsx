@@ -15,7 +15,7 @@ export const Main = () => {
     <div className="layout-wrapper">
       <div className="teachersDesk">
         <div className="date-display">
-          <p>Dnes je: {today}</p>
+          <p>Dnes je {today}.</p>
         </div>
         <div className="desk2"></div>
       </div>
