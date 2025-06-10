@@ -47,7 +47,7 @@ export const Nepritomnost = ({
         ))}
       </ul>
       {zaci.length === 0 ? (
-        <p>Žádní žáci ve třídě {aktivniTrida}.</p>
+        <p className='emptyList'>Žádní žáci ve třídě {aktivniTrida}.</p>
       ) : (
         <button
           onClick={() => {

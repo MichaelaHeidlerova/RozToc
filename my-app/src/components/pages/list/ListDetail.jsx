@@ -1,9 +1,12 @@
 import { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import Tooltip from './Tooltip';
 
 export const ListDetail = () => {
   const params = useParams();
-  const [list, setList] = useState(JSON.parse(localStorage.getItem('seznamZaku')) || []);
+  const [list, setList] = useState(
+    JSON.parse(localStorage.getItem('seznamZaku')) || [],
+  );
 
   // Formulářové stavy (každý input má svůj)
   const [celeJmeno, setCeleJmeno] = useState('');
@@ -87,9 +90,63 @@ export const ListDetail = () => {
           <tr>
             <th className="thVlastnosti">Příjmení a jméno</th>
             <th className="thVlastnosti">Pohlaví</th>
-            <th className="thVlastnosti">Bystrost</th>
-            <th className="thVlastnosti">Samostatnost</th>
-            <th className="thVlastnosti">Sociálnost</th>
+            <th>
+              <Tooltip
+                content={
+                  <>
+                    1 - Extrémně nadaný a bystrý
+                    <br />
+                    2 - Nadprůměrný
+                    <br />
+                    3 - Průměrný
+                    <br />
+                    4 - Podprůměrný
+                    <br />
+                    5 - Slabý
+                  </>
+                }
+              >
+                Bystrost
+              </Tooltip>
+            </th>
+            <th>
+              <Tooltip
+                content={
+                  <>
+                    1 - Vysoce samostatný/proaktivní 
+                    <br />
+                    2 - Spíše samostatný
+                    <br />
+                    3 - Průměrný/občas potřebuje podporu 
+                    <br />
+                    4 - Spíše nesamostatný
+                    <br />
+                    5 - Potřebuje neustálé vedení/nesamostatný 
+                  </>
+                }
+              >
+                Samostatnost
+              </Tooltip>
+            </th>
+            <th>
+              <Tooltip
+                content={
+                  <>
+                    1 - Vůdce/motivátor 
+                    <br />
+                    2 - Aktivní spolupracovník 
+                    <br />
+                    3 - Průměrný
+                    <br />
+                    4 - Pasivní/tichý
+                    <br />
+                    5 - Konfliktní/nespolupracující 
+                  </>
+                }
+              >
+                Soc. dovednosti
+              </Tooltip>
+            </th>
             <th className="thVlastnosti">Přidání/odebrání žáka</th>
           </tr>
         </thead>
@@ -117,15 +174,17 @@ export const ListDetail = () => {
               );
             })}
           <tr>
-            <td>
+            <td className="tdJmeno">
               <input
                 value={celeJmeno}
                 onChange={(e) => setCeleJmeno(e.target.value)}
-                placeholder="Celé jméno"
+                placeholder="Zadej celé jméno žáka"
+                className="vlastnost-input"
               />
             </td>
             <td>
               <select
+                className="vlastnost-input"
                 value={pohlavi}
                 onChange={(e) => setPohlavi(e.target.value)}
               >
@@ -140,7 +199,9 @@ export const ListDetail = () => {
                 max="5"
                 value={bystrost}
                 onChange={(e) => setBystrost(e.target.value)}
-                className={!isValidValue(bystrost) ? 'input-error' : ''}
+                className={`vlastnost-input ${
+                  !isValidValue(bystrost) ? 'input-error' : ''
+                }`}
               />
             </td>
             <td>
@@ -150,7 +211,9 @@ export const ListDetail = () => {
                 max="5"
                 value={samostatnost}
                 onChange={(e) => setSamostatnost(e.target.value)}
-                className={!isValidValue(samostatnost) ? 'input-error' : ''}
+                className={`vlastnost-input ${
+                  !isValidValue(samostatnost) ? 'input-error' : ''
+                }`}
               />
             </td>
             <td>
@@ -160,7 +223,9 @@ export const ListDetail = () => {
                 max="5"
                 value={socialni}
                 onChange={(e) => setSocialni(e.target.value)}
-                className={!isValidValue(socialni) ? 'input-error' : ''}
+                className={`vlastnost-input ${
+                  !isValidValue(socialni) ? 'input-error' : ''
+                }`}
               />
             </td>
             <td>

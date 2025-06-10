@@ -7,8 +7,9 @@ export const AboutUs = () => {
         <div className="pageTitle">
           <h2>O NÁS</h2>
         </div>
-      <p>
+      <p className="about-us-text">
       Jsme Gábina a Míša a společně tvoříme super tým!
+      <br />      
       Mrkni na naše GitHuby:
       </p>
       <div className="icons-wrapper">

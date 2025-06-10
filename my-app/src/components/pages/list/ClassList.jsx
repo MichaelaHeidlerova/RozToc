@@ -32,7 +32,7 @@ export const ClassList = ({ data }) => {
       </div>
 
       {list.length === 0 ? (
-        <div>Nemáte uložené žádné třídy.</div>
+        <p className="emptyList">Nemáte uložené žádné třídy.</p>
       ) : (
         <div className="numberOfGroup">
           {list?.map((row) => (
@@ -45,12 +45,13 @@ export const ClassList = ({ data }) => {
 
       {/* Formulář pro přidání nové třídy */}
       <div className="add-class-form">
-        <input
+        <input className='inputClass'
           type="text"
-          placeholder="Zadej název třídy (např. 5B)"
+          placeholder="Zadej název třídy (např. 5.B)"
           value={novaTrida}
           onChange={(e) => setNovaTrida(e.target.value)}
         />
+        <br />
         <button onClick={handlePridejTridu}>Přidat třídu</button>
       </div>
     </div>

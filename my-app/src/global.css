@@ -184,15 +184,65 @@ h2 {
   font-size: 28px;
 }
 
-td,
-.thVlastnosti {
-  align-items: center;
-  justify-content: center;
+.list-detail table th {
+  font-size: 15px; /* Nastav velikost písma */
+  padding: 8px; /* Přidá vnitřní okraje pro lepší vzhled */
+  border-bottom: 2px solid #ddd;
   text-align: center;
 }
 
-.tdJmeno {
-  text-align: left;
+.list-detail td {
+  text-align: center; /* Přidáno pro vystředění textu */
+}
+
+td.tdJmeno {
+  align-items: left;
+  justify-content: left;
+}
+
+p.about-us-text, p.emptyList {
+  font-size: 20px;
+  text-align: center;
+  justify-content: center;
+}
+
+.inputClass {
+  width: 30%;
+  height: 20%;
+  padding: 5px;
+  font-size: 18px;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-left: 10px;
+}
+
+.vlastnost-input {
+  width: 80%;
+  height: 25px;
+  font-size: 15px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 5px;
+}
+
+button {
+  padding: 5px 10px;
+  font-size: 18px;
+  border: none;
+  border-radius: 4px;
+  background-color: #80562E;
+  border: 1px solid #000000;
+  color: white;
+  cursor: pointer;
+}
+
+.numberOfGroups {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 @media (max-width: 768px) {

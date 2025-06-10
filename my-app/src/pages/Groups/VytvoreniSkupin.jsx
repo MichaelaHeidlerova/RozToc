@@ -9,7 +9,7 @@ export const VytvoreniSkupin = () => {
         <h2>VYBER TŘÍDU</h2>
       </div>
       {volaniSkupin.length === 0 ? (
-        <div>Nemáte uložené žádné třídy.</div>
+        <p className="emptyList">Nemáte uložené žádné třídy.</p>
       ) : (
         <div className="numberOfGroup">
           {volaniSkupin?.map((row) => (

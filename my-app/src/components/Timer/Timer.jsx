@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import './Timer.css';
 
 export const Timer = () => {
   // === STAV KOMPONENTY ===
@@ -134,164 +135,70 @@ export const Timer = () => {
         clearInterval(intervalRef.current);
       }
     };
-  }, [isRunning, hours, minutes, seconds]); // Závislosti zůstávají stejné
+  }, [isRunning, hours, minutes, seconds]); 
 
-  // === POMOCNÁ FUNKCE PRO FORMÁTOVÁNÍ ZOBRAZENÍ ČASU ===
   const formatTime = (value) => String(value).padStart(2, '0');
 
-  // === JSX (Co se renderuje na obrazovce) ===
   return (
-    <div
-      style={{
-        textAlign: 'center',
-        padding: '20px',
-        backgroundColor: '#f9f9f9',
-        borderRadius: '10px',
-        boxShadow: '0 2px 10px rgba(0,0,0,0.1)',
-        fontFamily: 'Roboto, sans-serif',
-      }}
-    >
+    <div>
       <div className="pageTitle">
         <h2>ODPOČET ČASU</h2>
       </div>
       {/* Sekce pro zadávání času */}
-      <div style={{ marginBottom: '30px' }}>
-        <input
+      <div className="setTime">
+        <input 
           type="number"
-          placeholder="Hodin"
+          placeholder="Hodiny"
           min="0"
           max="99"
           value={inputHours} // Hodnota inputu je řízena stavem `inputHours`
-          onChange={(e) => handleInputChange(e, 'hours')} // Při změně inputu aktualizujeme stav `inputHours`
-          style={{
-            width: '80px',
-            margin: '0 8px',
-            padding: '10px',
-            border: '1px solid #ddd',
-            borderRadius: '5px',
-            fontSize: '1em',
-          }}
+          onChange={(e) => handleInputChange(e, 'hours')}
         />
         <input
           type="number"
-          placeholder="Minut"
+          placeholder="Minuty"
           min="0"
           max="59"
           value={inputMinutes} // Hodnota inputu je řízena stavem `inputMinutes`
-          onChange={(e) => handleInputChange(e, 'minutes')} // Při změně inputu aktualizujeme stav `inputMinutes`
-          style={{
-            width: '80px',
-            margin: '0 8px',
-            padding: '10px',
-            border: '1px solid #ddd',
-            borderRadius: '5px',
-            fontSize: '1em',
-          }}
+          onChange={(e) => handleInputChange(e, 'minutes')} 
         />
         <input
           type="number"
-          placeholder="Sekund"
+          placeholder="Sekundy"
           min="0"
           max="59"
           value={inputSeconds} // Hodnota inputu je řízena stavem `inputSeconds`
-          onChange={(e) => handleInputChange(e, 'seconds')} // Při změně inputu aktualizujeme stav `inputSeconds`
-          style={{
-            width: '80px',
-            margin: '0 8px',
-            padding: '10px',
-            border: '1px solid #ddd',
-            borderRadius: '5px',
-            fontSize: '1em',
-          }}
+          onChange={(e) => handleInputChange(e, 'seconds')}
         />
         <button
-          onClick={handleSetTime}
-          style={{
-            marginLeft: '15px',
-            padding: '10px 20px',
-            backgroundColor: '#28a745',
-            color: 'white',
-            border: 'none',
-            borderRadius: '5px',
-            cursor: 'pointer',
-            fontSize: '1em',
-            transition: 'background-color 0.3s ease',
-          }}
-        >
+          onClick={handleSetTime}>
           Nastavit čas
         </button>
       </div>
 
       {/* Zobrazení odpočítávaného času */}
-      <div
-        style={{
-          fontSize: '5em',
-          fontWeight: 'bold',
-          color: '#007bff',
-          marginBottom: '30px',
-          textShadow: '2px 2px 4px rgba(0,0,0,0.1)',
-        }}
-      >
+      <div className="timerDisplay">
         {formatTime(hours)}:{formatTime(minutes)}:{formatTime(seconds)}
       </div>
 
       {/* Tlačítka pro ovládání časovače */}
-      <div style={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>
-        <button
+      <div className='timerControls'>
+        <button className='startBtn'
           onClick={startTimer}
           disabled={
             isRunning ||
             !initialTimeSet ||
             (hours === 0 && minutes === 0 && seconds === 0)
-          }
-          style={{
-            padding: '12px 25px',
-            fontSize: '1.3em',
-            backgroundColor: '#007bff',
-            color: 'white',
-            border: 'none',
-            borderRadius: '5px',
-            cursor: 'pointer',
-            transition: 'background-color 0.3s ease',
-            opacity:
-              isRunning ||
-              !initialTimeSet ||
-              (hours === 0 && minutes === 0 && seconds === 0)
-                ? 0.6
-                : 1,
-          }}
-        >
+          }>
           Start
         </button>
-        <button
+        <button className='pausaBtn'
           onClick={pauseTimer}
-          disabled={!isRunning}
-          style={{
-            padding: '12px 25px',
-            fontSize: '1.3em',
-            backgroundColor: '#ffc107',
-            color: '#333',
-            border: 'none',
-            borderRadius: '5px',
-            cursor: 'pointer',
-            transition: 'background-color 0.3s ease',
-            opacity: !isRunning ? 0.6 : 1,
-          }}
         >
           Pauza
         </button>
-        <button
+        <button className='resetBtn'
           onClick={resetTimer}
-          style={{
-            padding: '12px 25px',
-            fontSize: '1.3em',
-            backgroundColor: '#dc3545',
-            color: 'white',
-            border: 'none',
-            borderRadius: '5px',
-            cursor: 'pointer',
-            transition: 'background-color 0.3s ease',
-          }}
         >
           Reset
         </button>
