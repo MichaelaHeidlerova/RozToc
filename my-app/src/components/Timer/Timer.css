@@ -7,7 +7,7 @@
   height: 100%;
   gap: 20px;
   font-size: 25px;
-  margin-top: 20px;
+  margin-top: 80px;
 }
 
 .setTime input {
@@ -76,5 +76,4 @@ input {
   align-items: center;
   justify-content: space-between;
   font-size: 25px;
-  margin: 25px 0;
 }
