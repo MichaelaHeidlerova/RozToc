@@ -72,24 +72,8 @@ export const Instruction = () => {
         </div>
 
         <div className="guide-section">
-          <h3 className="guide-subheading">4. Přidělení rolí ve skupině</h3>
-          <p className="guide-paragraph">
-            Po vytvoření skupin můžete každému žákovi v rámci jeho skupiny
-            přiřadit specifické role:
-          </p>
-          <ul className="guide-list">
-            <li>Kapitán</li>
-            <li>Zapisovatel</li>
-            <li>Prezentátor</li>
-            <li>Přípravář</li>
-            <li>Časoměřič</li>
-            <li>Kontrolor</li>
-          </ul>
-        </div>
-
-        <div className="guide-section">
           <h3 className="guide-subheading">
-            5. Odpočet času pro skupinovou práci
+            4. Odpočet času pro skupinovou práci
           </h3>
           <p className="guide-paragraph">
             Pro usnadnění skupinové práce můžete zapnout odpočet času. Zadejte,

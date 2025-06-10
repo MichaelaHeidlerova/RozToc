@@ -8,13 +8,17 @@ export const VytvoreniSkupin = () => {
       <div className="pageTitle">
         <h2>VYBER TŘÍDU</h2>
       </div>
-      <div className="numberOfGroup">
-        {volaniSkupin?.map((row) => (
-          <Link to={`/groups/${row.nazevTridy}`} key={row.nazevTridy}>
-            <div className="number">{row.nazevTridy}</div>
-          </Link>
-        ))}
-      </div>
+      {volaniSkupin.length === 0 ? (
+        <div>Nemáte uložené žádné třídy.</div>
+      ) : (
+        <div className="numberOfGroup">
+          {volaniSkupin?.map((row) => (
+            <Link to={`/groups/${row.nazevTridy}`} key={row.nazevTridy}>
+              <div className="number">{row.nazevTridy}</div>
+            </Link>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

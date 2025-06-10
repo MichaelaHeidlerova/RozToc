@@ -31,13 +31,17 @@ export const ClassList = ({ data }) => {
         <h2>MOJE TŘÍDY/PŘIDEJ TŘÍDU</h2>
       </div>
 
-      <div className="numberOfGroup">
-        {list?.map((row) => (
-          <Link to={`/class-detail/${row.nazevTridy}`} key={row.nazevTridy}>
-            <div className="number">{row.nazevTridy}</div>
-          </Link>
-        ))}
-      </div>
+      {list.length === 0 ? (
+        <div>Nemáte uložené žádné třídy.</div>
+      ) : (
+        <div className="numberOfGroup">
+          {list?.map((row) => (
+            <Link to={`/class-detail/${row.nazevTridy}`} key={row.nazevTridy}>
+              <div className="number">{row.nazevTridy}</div>
+            </Link>
+          ))}
+        </div>
+      )}
 
       {/* Formulář pro přidání nové třídy */}
       <div className="add-class-form">
