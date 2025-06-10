@@ -49,19 +49,21 @@ export const Nepritomnost = ({
       {zaci.length === 0 ? (
         <p className='emptyList'>Žádní žáci ve třídě {aktivniTrida}.</p>
       ) : (
-        <button
+        <div className='character-div'>
+        <button className='character'
           onClick={() => {
             const pritomniZaciList = zaci.filter(
               (zak) => pritomniZaci[zak.celeJmeno],
             );
-            console.log('Přítomní žáci:', pritomniZaciList);
             setZaciVeSkupine(pritomniZaciList);
             setStep('vlastnosti');
           }}
         >
           Pokračovat na vlastnosti
         </button>
+        </div>
       )}
+
     </div>
   );
 };

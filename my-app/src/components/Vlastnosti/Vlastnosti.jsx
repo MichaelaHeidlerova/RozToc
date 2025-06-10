@@ -34,17 +34,12 @@ export const Vlastnosti = ({ zaciVeSkupine, setVysledek, setStep }) => {
 
 const vysledek = rozdelDoSkupin( zaciVeSkupine, vybraneVlastnosti, typSkupin, typSkupin === 'pocetSkupin' ? pocetSkupin : pocetZaku);
 
-console.log('Výsledek rozdělení:', setVysledek);
-
 setVysledek(vysledek);
 setStep('vysledek');
 
     if (typSkupin === 'pocetSkupin') {
-      console.log(`Vytvářím ${pocetSkupin} skupin.`);
     } else if (typSkupin === 'pocetZaku') {
-      console.log(`Vytvářím skupiny po ${pocetZaku} žácích.`);
     } else {
-      console.log('Nevybrán typ skupiny.');
     }
   };
 
@@ -103,7 +98,7 @@ setStep('vysledek');
           </div>
         </div>
         <div className="selectFormation">
-          <div className="numberOfStudents">
+          <div>
             <button className="drawersBtn"
               onClick={() => {
                 setTypSkupin('pocetSkupin');
@@ -113,7 +108,7 @@ setStep('vysledek');
               Vytvořit daný počet skupin
             </button>
           </div>
-          <div className="numberOfStudents">
+          <div>
             <button className="drawersBtn"
               onClick={() => {
                 setTypSkupin('pocetZaku');
@@ -127,7 +122,7 @@ setStep('vysledek');
         <div>
           {typSkupin === 'pocetSkupin' && (
             <div className="numberOfGroups">
-              <label htmlFor="numberOfGroups">Zadejte počet skupin:</label>
+              <label htmlFor="numberOfGroups"><p>Zadejte počet skupin: </p></label>
               <input
                 type="number"
                 id="numberOfGroups"
@@ -142,7 +137,7 @@ setStep('vysledek');
           {typSkupin === 'pocetZaku' && (
             <div className="numberOfStudents">
               <label htmlFor="numberOfStudents">
-                Zadejte počet žáků ve skupině:
+                <p>Zadejte počet žáků ve skupině: </p>
               </label>
               <input
                 type="number"
@@ -156,7 +151,7 @@ setStep('vysledek');
             </div>
           )}
         </div>
-        <div>
+        <div className="add-class-form">
           <button className="mixedGroups" onClick={handleVytvorSkupiny}>
             Vytvořit skupiny
           </button>

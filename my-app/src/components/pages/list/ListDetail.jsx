@@ -215,7 +215,7 @@ export const ListDetail = () => {
                         type="text"
                         value={editedValues.celeJmeno || ''}
                         onChange={(e) => handleInputChange(e, 'celeJmeno')}
-                        className="vlastnost-input-name" /* Použití stejné třídy */
+                        className="vlastnost-input-name"
                       />
                     ) : (
                       row.celeJmeno

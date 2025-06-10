@@ -10,7 +10,6 @@ export const Groups = () => {
   const [vysledek, setVysledek] = useState()
 
 const vypocitejVysledek = () => {
-  console.log("Vypočítávám výsledek...");
 }
 
   const params = useParams();
