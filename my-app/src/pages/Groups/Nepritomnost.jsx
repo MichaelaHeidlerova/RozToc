@@ -32,7 +32,7 @@ export const Nepritomnost = ({
       <div className="pageTitle">
         <h2>OZNAČ PŘÍTOMNÉ ŽAKY</h2>
       </div>
-      <ul>
+      <ul className='no-margin-padding'>
         {zaci.map((zak) => (
           <li key={zak.celeJmeno}>
             <label>

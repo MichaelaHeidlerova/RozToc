@@ -61,6 +61,7 @@ setStep('vysledek');
       <div className="pageContent">
         <div className="howManyGroups">
           <div>
+          <div>
             <input
               type="checkbox"
               id="pohlavi"
@@ -69,6 +70,8 @@ setStep('vysledek');
               onChange={handleVlastnostChange}
             />
             <label>POHLAVÍ</label>
+            </div>
+            <div>
             <input
               type="checkbox"
               id="samostatnost"
@@ -78,6 +81,8 @@ setStep('vysledek');
             />
             <label>SCHOPNOST SAMOSTATNÉ PRÁCE</label>
           </div>
+          </div>
+          <div>
           <div>
             <input
               type="checkbox"
@@ -87,6 +92,8 @@ setStep('vysledek');
               onChange={handleVlastnostChange}
             />
             <label>BYSTROST/NADÁNÍ</label>
+            </div>
+            <div>
             <input
               type="checkbox"
               id="socialni"
@@ -96,6 +103,7 @@ setStep('vysledek');
             />
             <label>SOCIÁLNÍ DOVEDNOSTI</label>
           </div>
+        </div>
         </div>
         <div className="selectFormation">
           <div>

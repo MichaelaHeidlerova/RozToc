@@ -8,11 +8,11 @@
 .howManyGroups {
   display: flex;
   flex-direction: row;
-  gap: 50px;
   justify-content: center;
 }
 
 input[type='checkbox'] {
   width: 20px;
   height: 20px;
+  margin-right: 10px;
 }
