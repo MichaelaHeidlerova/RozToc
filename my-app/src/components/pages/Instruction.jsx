@@ -7,19 +7,19 @@ export const Instruction = () => {
 
       <div className="pageContent">
         <p className="guide-paragraph">
-          Vítejte v nástroji pro efektivní správu tříd a žáků a tvorbu skupin!
-          Následující kroky Vás provedou klíčovými funkcemi.
+          Vítejte v nástroji pro správu tříd a žáků a především efektivní tvorbu týmů pro skupinovou práci!<br />
+          Následující kroky Vás provedou klíčovými funkcemi:
         </p>
 
         <div className="guide-Content">
-          <h3 className="guide-subheading">1. Založení třídy a přidání žáků</h3>
+          <h3 className="guide-subheading">1. SPRÁVA TŘÍD: Založení třídy a přidání žáků</h3>
           <p className="guide-paragraph">
-            <strong>Založení třídy:</strong> Po přihlášení klikněte na tlačítko
-            "Správa tříd". Zadejte název třídy (např. 7.A) a uložte.
+            <strong>Založení třídy:</strong> Klikněte na tlačítko
+            "Správa tříd". Do příkazového řádku zadejte název třídy (např. 7. A) a klikněte na "Přidat třídu".
           </p>
           <p className="guide-paragraph">
             <strong>Přidání žáků:</strong> V přehledu tříd vyberte nově
-            vytvořenou třídu a klikněte na "Přidat žáka". Zadejte jméno žáka a
+            vytvořenou třídu. Do příkazového řádku zadejte celé jméno žáka, vyberte jeho pohlaví a
             volitelně doplňte jeho vlastnosti známkou 1-5 jako ve škole:
           </p>
           <ul className="guide-list">
@@ -28,64 +28,59 @@ export const Instruction = () => {
             <li>Schopnost samostatné práce</li>
             <li>Sociální dovednosti</li>
           </ul>
-        </div>
-
-        <div className="guide-section">
-          <h3 className="guide-subheading">2. Správa docházky</h3>
           <p className="guide-paragraph">
-            V přehledu žáků ve třídě můžete snadno zaškrtnout přítomnost či
-            nepřítomnost žáků pro daný den. Nepřítomní žáci nebudou zařazeni do
-            skupin.
+            Klikněte na tlačítko "Přidat" a žák se objeví v přehledu třídy. Tento postup opakujte pro každého žáka, kterého chcete přidat do třídy. Seznam žáků ve třídě se AUTOMATICKY ukládá!
           </p>
         </div>
 
         <div className="guide-section">
-          <h3 className="guide-subheading">3. Tvorba skupin</h3>
+          <h3 className="guide-subheading">2. TVORBA SKUPIN</h3>
           <p className="guide-paragraph">
-            Máte dvě možnosti, jak tvořit skupiny:
+            V Tvorbě skupin nejdříve vyberte požadovanou třídu. Dále označte přítomné žáky (POZOR - automaticky se všichni onačují jako přítomní, tudíž odškrnete jen ty, co v daný moment chybí). V dalším kroku pak vyberte dle čeho chcete dané skupiny tvořit.
           </p>
-          <ul className="guide-list">
-            <li>
-              <strong>Vytvořit daný počet skupin:</strong> Zadejte požadovaný
-              počet skupin (např. 5 skupin) a systém žáky rozdělí.
-            </li>
-            <li>
-              <strong>Vytvořit skupiny po X žácích:</strong> Zadejte, kolik žáků
-              má být v každé skupině (např. 3 žáci na skupinu).
-            </li>
-          </ul>
           <p className="guide-paragraph">
             Zohlednění vlastností žáků při tvorbě skupin:
           </p>
           <ul className="guide-list">
             <li>
-              <strong>Zcela náhodně:</strong> Systém rozdělí žáky bez ohledu na
+              <strong>ZCELA NÁHODNĚ:</strong> Když žádnou vlastnost nezaškrtnete, systém rozdělí žáky bez ohledu na
               jejich vlastnosti.
             </li>
             <li>
-              <strong>S ohledem na vlastnosti:</strong> Systém se pokusí
+              <strong>S OHLEDEM NA VLASTNOSTI:</strong> Systém se pokusí
               rozložit žáky s různými vlastnostmi rovnoměrně do skupin (např.
               aby v každé skupině byl někdo nadaný, někdo s dobrými sociálními
               dovednostmi atd.).
+            </li>
+          </ul>
+          <p className="guide-paragraph">
+              Máte dvě možnosti, jak tvořit skupiny:
+          </p>
+          <ul className="guide-list">
+            <li>
+              <strong>VYTVOŘIT DANÝ POČET SKUPIN:</strong> Zadejte požadovaný
+              počet skupin (např. 5 skupin) a systém žáky rozdělí.
+            </li>
+            <li>
+              <strong>VYTVOŘIT SKUPINY PO X ŽÁCÍCH:</strong> Zadejte, kolik minimálně žáků
+              má být v jedné skupině (např. 3 žáci ve skupině).
             </li>
           </ul>
         </div>
 
         <div className="guide-section">
           <h3 className="guide-subheading">
-            4. Odpočet času pro skupinovou práci
+            3. ČASOMÍRA: Odpočet času pro skupinovou práci
           </h3>
           <p className="guide-paragraph">
-            Pro usnadnění skupinové práce můžete zapnout odpočet času. Zadejte,
-            kolik času mají žáci na úkol, a spusťte odpočet. Žáci tak budou mít
-            jasnou představu o zbývajícím čase.
+            Zadejte, kolik času mají žáci na splnění úkolu, a spusťte odpočet. Žáci tak budou mít
+            jasnou představu o tom, kolik času jim na práci ještě zbývá.
           </p>
         </div>
 
         <p className="guide-conclusion">
           Věříme, že Vám tento nástroj usnadní práci se žáky a organizaci
-          skupinových aktivit! Pokud budete mít jakékoli dotazy, neváhejte se na
-          nás obrátit.
+          skupinových aktivit! Pokud budete mít jakékoli dotazy a nebo nápady/postřehy, jak naši aplikaci ještě vylepšit neváhejte se na nás obrátit :)
         </p>
       </div>
     </section>
