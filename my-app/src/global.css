@@ -335,6 +335,12 @@ button {
 
 input#numberOfStudents, input#numberOfGroups {
   margin-left: 20px;
+  width: 10%;
+  height: 20%;
+  font-size: 18px;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  padding: 5px;
 }
 
 .character {
@@ -343,7 +349,7 @@ input#numberOfStudents, input#numberOfGroups {
   justify-content: center;
 }
 
-.no-margin-padding {
+ul.no-margin-padding {
   margin-left: 30px;
   list-style: none;
 }
